@@ -4,34 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/purple_700"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:background="@color/purple_700">
+    tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="322dp"
         android:layout_height="121dp"
+        android:layout_gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logobranco"
-        android:layout_gravity="center"/>
+        app:srcCompat="@drawable/logobranco" />
 
     <LinearLayout
         android:id="@+id/dyn_layout"
-        android:background="@drawable/rounded_red_border"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/rounded_red_border"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:padding="10dip"
-        android:gravity="center_horizontal">
+        android:padding="10dip">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="110dp"
+            android:layout_marginTop="100dp"
             android:text="Iniciar sessão"
             android:textColor="@color/purple_700"
             android:textSize="30sp"
@@ -39,43 +39,42 @@
 
         <EditText
             android:id="@+id/editTextTextPersonName2"
-            android:layout_width="wrap_content"
+            android:layout_width="215dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
             android:background="@drawable/textview_border"
-            android:layout_marginTop="60dp"
+            android:drawableLeft="@drawable/profile"
             android:ems="10"
+            android:hint="  N° Utente"
             android:inputType="textPersonName"
-            android:hint=" N° Utente"
-            android:drawableLeft="@drawable/profile"/>
+            android:textSize="14dp" />
 
         <EditText
             android:id="@+id/editTextTextPassword2"
-            android:layout_width="wrap_content"
+            android:layout_width="215dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:background="@drawable/textview_border"
-            android:hint=" Password"
             android:drawableLeft="@drawable/password"
             android:ems="10"
-            android:inputType="textPassword" />
+            android:hint="  Password"
+            android:inputType="textPassword"
+            android:textSize="14dp" />
 
         <Button
             android:id="@+id/btn_login"
 
-            android:text="Login"
+            android:layout_width="257dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/buttonshape"
+            android:backgroundTint="@color/purple_700"
+            android:text="@string/login"
+            android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
-            android:layout_marginTop="60dp"
-            android:layout_width="170dp"
-            android:layout_height="60dp"
-            android:background="@drawable/buttonshape"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nao tem conta? Regista-se ja"
-            android:layout_marginTop="10dp"/>
+            android:textStyle="bold"
+            android:visibility="visible" />
 
 
     </LinearLayout>
