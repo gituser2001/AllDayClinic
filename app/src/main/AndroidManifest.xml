@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ipca.gamecatalog.alldayclinic">
+    package="com.example.ipca.gamecatalog.alldayclinic" >
 
     <application
         android:allowBackup="true"
@@ -8,12 +8,13 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AllDayClinic">
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".SplashScreen">
+        android:theme="@style/Theme.AllDayClinic" >
+        <activity android:name=".Login" >
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".SplashScreen" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"
-                    />
+                <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

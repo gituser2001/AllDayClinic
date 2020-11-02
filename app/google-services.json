@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1019067873830",
+    "firebase_url": "https://alldayclinic-15a43.firebaseio.com",
+    "project_id": "alldayclinic-15a43",
+    "storage_bucket": "alldayclinic-15a43.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1019067873830:android:a7ef76b1f80e4eaf8cc4e7",
+        "android_client_info": {
+          "package_name": "com.example.ipca.gamecatalog.alldayclinic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1019067873830-chg3i09u19gsl430r8eu2tka4413q9k8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEYc2ze339RxpyPL6sTq4DgxyMGQuDCwI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1019067873830-chg3i09u19gsl430r8eu2tka4413q9k8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
