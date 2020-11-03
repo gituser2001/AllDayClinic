@@ -11,8 +11,7 @@
         android:theme="@style/Theme.AllDayClinic">
         <activity
             android:name=".Agenda"
-            android:label="@string/title_activity_agenda"></activity>
-        <activity android:name=".Login"></activity>
+            android:label="@string/title_activity_agenda" />
         <activity android:name=".MainActivity" />
         <activity android:name=".SplashScreen">
             <intent-filter>
