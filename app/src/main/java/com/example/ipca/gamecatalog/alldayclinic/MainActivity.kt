@@ -16,14 +16,14 @@ private lateinit var auth : FirebaseAuth
         val binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
+        auth = FirebaseAuth.getInstance()
         auth.createUserWithEmailAndPassword(binding.editTextUtente.text.toString(),
             binding.editTextPassword.text.toString())
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     val user = auth.currentUser
                     val intent = Intent(this, Agenda::class.java)
-                    intent.putExtra("email", binding.editTextUtente.text.toString())
+                    intent.putExtra("e-mail", binding.editTextUtente.text.toString())
                     intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                     startActivity(intent)
                 } else {

@@ -11,6 +11,7 @@ import androidx.navigation.ui.setupWithNavController
 class Agenda : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        supportActionBar?.hide()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_agenda)
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
