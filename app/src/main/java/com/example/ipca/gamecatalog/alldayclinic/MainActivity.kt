@@ -2,8 +2,10 @@ package com.example.ipca.gamecatalog.alldayclinic
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.ipca.gamecatalog.alldayclinic.databinding.ActivityMainBinding
+import com.google.android.gms.tasks.OnCompleteListener
 
 
 import com.google.firebase.auth.FirebaseAuth
@@ -14,24 +16,22 @@ private lateinit var auth : FirebaseAuth
 
         supportActionBar?.hide();
         super.onCreate(savedInstanceState)
-        val binding = ActivityMainBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+        setContentView(R.layout.activity_main)
 
+
+        val email = findViewById<TextView>(R.id.editTextUtente)
+        val password = findViewById<TextView>(R.id.editTextPassword)
         auth = FirebaseAuth.getInstance()
-        auth.createUserWithEmailAndPassword(binding.editTextUtente.text.toString(),
-          binding.editTextPassword.text.toString())
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    val user = auth.currentUser
-                    val intent = Intent(this, Agenda::class.java)
-                    intent.putExtra("email", binding.editTextUtente.text.toString())
-                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
-                    startActivity(intent)
-                } else {
-
-                }
+        auth.createUserWithEmailAndPassword(email.text.toString(), password.text.toString()).addOnCompleteListener(this, OnCompleteListener{ task ->
+            if(task.isSuccessful){
+                Toast.makeText(this, "Successfully Registered", Toast.LENGTH_LONG).show()
+                val intent = Intent(this, Agenda::class.java)
+                startActivity(intent)
+                finish()
+            }else {
+                Toast.makeText(this, "Registration Failed", Toast.LENGTH_LONG).show()
             }
+        })
 
 
     }
