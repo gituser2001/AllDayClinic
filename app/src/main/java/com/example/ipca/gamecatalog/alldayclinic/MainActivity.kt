@@ -22,10 +22,9 @@ private lateinit var auth : FirebaseAuth
         val password = findViewById<TextView>(R.id.editTextPassword)
         val btnLogin = findViewById<Button>(R.id.btn_login)
         btnLogin.setOnClickListener {  auth = getInstance()
-            auth.createUserWithEmailAndPassword(email.text.toString(), password.text.toString())
+            auth.signInWithEmailAndPassword(email.text.toString(), password.text.toString())
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
-                            val user = auth.currentUser
                             val intent = Intent(this, Agenda::class.java)
                             intent.putExtra("email", email.text.toString())
                             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
