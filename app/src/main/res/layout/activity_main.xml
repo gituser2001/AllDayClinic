@@ -74,6 +74,7 @@
             android:backgroundTint="@color/purple_700"
 
             android:text="@string/entrar"
+            android:textColor="#F6F4F4"
             android:textSize="24sp" />
 
     </LinearLayout>
