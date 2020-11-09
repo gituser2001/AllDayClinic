@@ -2,11 +2,11 @@
     <string name="app_name">AllDayClinic</string>
     <string name="login">Login</string>
     <string name="title_activity_agenda">MainActivity</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_home">Agenda</string>
+    <string name="title_dashboard">Chat</string>
+    <string name="title_notifications">Perfil</string>
     <string name="entrar">Entrar</string>
-    <string name="password">.  Password</string>
-    <string name="e_mail">.  e-mail</string>
+    <string name="password">Password</string>
+    <string name="e_mail">E-mail</string>
     <string name="iniciar_sess_o">Iniciar sessão</string>
 </resources>

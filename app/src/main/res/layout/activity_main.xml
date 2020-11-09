@@ -44,9 +44,11 @@
             android:layout_marginTop="80dp"
             android:background="@drawable/textview_border"
             android:drawableLeft="@drawable/profile"
+            android:drawablePadding="10dp"
             android:ems="10"
             android:hint="@string/e_mail"
             android:inputType="textPersonName"
+            android:shadowColor="#3B3B3B"
             android:textSize="14dp" />
 
         <EditText
@@ -56,6 +58,7 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/textview_border"
             android:drawableLeft="@drawable/password"
+            android:drawablePadding="10dp"
             android:ems="10"
             android:hint="@string/password"
             android:inputType="textPassword"
