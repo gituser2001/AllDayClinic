@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
-            android:text="Iniciar sessão"
+            android:text="@string/iniciar_sess_o"
             android:textColor="@color/purple_700"
             android:textSize="30sp"
             android:textStyle="bold" />
@@ -45,7 +45,7 @@
             android:background="@drawable/textview_border"
             android:drawableLeft="@drawable/profile"
             android:ems="10"
-            android:hint="  e-mail"
+            android:hint="@string/e_mail"
             android:inputType="textPersonName"
             android:textSize="14dp" />
 
@@ -57,24 +57,21 @@
             android:background="@drawable/textview_border"
             android:drawableLeft="@drawable/password"
             android:ems="10"
-            android:hint="  Password"
+            android:hint="@string/password"
             android:inputType="textPassword"
             android:textSize="14dp" />
 
+
         <Button
             android:id="@+id/btn_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/buttonshape"
+            android:backgroundTint="@color/purple_700"
 
-            android:layout_width="257dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="80dp"
-            android:background="@color/purple_700"
-            android:text="@string/login"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:visibility="visible" />
-
+            android:text="@string/entrar"
+            android:textSize="24sp" />
 
     </LinearLayout>
 
