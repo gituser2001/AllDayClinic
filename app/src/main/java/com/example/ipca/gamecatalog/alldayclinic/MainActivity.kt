@@ -30,7 +30,7 @@ private lateinit var auth : FirebaseAuth
                             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                             startActivity(intent)
                         } else {
-                            Toast.makeText(this@MainActivity, "ERROU", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@MainActivity, "email ou palavra-passe incorreta", Toast.LENGTH_SHORT).show()
                         }
 
 
