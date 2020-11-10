@@ -1,10 +1,10 @@
-package com.example.ipca.gamecatalog.alldayclinic.ui.notifications
+package com.example.ipca.gamecatalog.alldayclinic.ui.profile
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class NotificationsViewModel : ViewModel() {
+class ProfileViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
 
