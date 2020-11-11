@@ -9,4 +9,6 @@
     <string name="password">Password</string>
     <string name="e_mail">E-mail</string>
     <string name="iniciar_sess_o">Iniciar sessão</string>
+    <string name="teresa">Teresa</string>
+    <string name="historico_de_consultas">Historico de consultas</string>
 </resources>
