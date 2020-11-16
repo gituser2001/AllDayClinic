@@ -43,15 +43,13 @@ private var currentUser : profile? = null
                         querySnapshot?.data?.let {
                             listUser = profile.fromHash(querySnapshot.data as HashMap<String, Any?>)
                             listUser?.let{ user ->
+                                var dtaNas = 2020 - (user.dtaNasc?.toInt()!!)
                                 text_nome.setText(user.nome)
+                                text_idade.setText(dtaNas.toString())
                             }
                         }
-
-
-
-
-                        }
                     }
+        }
 
         /*reference.addSnapshotListener { querySnapshot, e ->
 
