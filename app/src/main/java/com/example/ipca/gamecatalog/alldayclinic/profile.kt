@@ -1,13 +1,20 @@
 package com.example.ipca.gamecatalog.alldayclinic
 
-class profile {
-    var nome: String? = null
-    var idade: Int? = null
-    constructor(
-        nome:String?,
-        idade:Int?
-    ){
-        this.nome = nome
-        this.idade = idade
+class profile ( name: String,  dta_nasc: Int) {
+
+    private var name: String? = name
+    private var dta_nasc: Int? = dta_nasc
+
+    fun setName(Name: String) {
+        this.name = Name
+    }
+    fun getName(): String? {
+        return name
+    }
+    fun setDtaNasc(dta_nasc: Int) {
+        this.dta_nasc = dta_nasc
+    }
+    fun getDtaNasc(): Int? {
+        return dta_nasc
     }
 }

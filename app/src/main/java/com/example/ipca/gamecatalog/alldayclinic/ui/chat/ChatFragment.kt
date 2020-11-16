@@ -15,6 +15,14 @@ class ChatFragment : Fragment() {
 
     private lateinit var chatViewModel: ChatViewModel
 
+    //não remover que poderá ser necessário.
+    companion object
+    {
+        const val USER_KEY = "USER_KEY"
+        private val TAG = ChatFragment::class.java.simpleName
+    }
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -29,6 +37,7 @@ class ChatFragment : Fragment() {
         })
 
         return root
+
     }
 
 
