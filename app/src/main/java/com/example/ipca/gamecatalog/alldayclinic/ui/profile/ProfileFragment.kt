@@ -9,12 +9,16 @@ import androidx.fragment.app.Fragment
 import com.example.ipca.gamecatalog.alldayclinic.R
 import com.example.ipca.gamecatalog.alldayclinic.profile
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 
 
 class ProfileFragment : Fragment() {
-
+private lateinit var auth : FirebaseAuth
+    var listUser: profile? = null
 private var currentUser : profile? = null
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -29,20 +33,25 @@ private var currentUser : profile? = null
         val root = inflater.inflate(R.layout.fragment_profile, container, false)
         val text_nome : TextView = root.findViewById(R.id.text_name)
         val text_idade : TextView = root.findViewById(R.id.text_age)
+        auth = Firebase.auth
+        val currentUser = auth.currentUser
 
 
-        db.collection("users").document(uid.toString())
-                .get()
-                .addOnSuccessListener { document ->
-                    if (document != null) {
-                        currentUser = profile(
-                                document.data?.getValue("name").toString(),
-                                document.data?.getValue("dta_nasc") as Int
-                        )
+        currentUser!!.uid?.let {
+            db.collection("users").document(it)
+                    .addSnapshotListener { querySnapshot, firebaseFirestoreException ->
+                        querySnapshot?.data?.let {
+                            listUser = profile.fromHash(querySnapshot.data as HashMap<String, Any?>)
+                            listUser?.let{ user ->
+                                text_nome.setText(user.nome)
+                            }
+                        }
+
+
+
+
+                        }
                     }
-                }
-                .addOnFailureListener { exception ->
-                }
 
         /*reference.addSnapshotListener { querySnapshot, e ->
 
@@ -55,8 +64,8 @@ private var currentUser : profile? = null
             }
         }*/
 
-        text_nome.setText(currentUser!!.getName()!!.toString())
-        text_idade.setText("Idade : " + (2020- currentUser!!.getDtaNasc()!!).toString())
+        /*text_nome.setText(currentUser!!.getName()!!.toString())
+        text_idade.setText("Idade : " + (2020- currentUser!!.getDtaNasc()!!).toString())*/
 
         return root
 

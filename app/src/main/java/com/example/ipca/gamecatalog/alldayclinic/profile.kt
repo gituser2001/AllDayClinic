@@ -1,20 +1,34 @@
 package com.example.ipca.gamecatalog.alldayclinic
 
-class profile ( name: String,  dta_nasc: Int) {
+class profile {
 
-    private var name: String? = name
-    private var dta_nasc: Int? = dta_nasc
+    var nome    : String?   = null
+    var dtaNasc : String?   = null
 
-    fun setName(Name: String) {
-        this.name = Name
+    constructor(
+        nome: String?,
+        dtaNasc: String?
+
+    ) {
+        this.nome       = nome
+        this.dtaNasc    = dtaNasc
     }
-    fun getName(): String? {
-        return name
+
+    fun toHashMap() : HashMap<String, Any?>{
+        val hasMap = HashMap<String, Any?>()
+        hasMap["nome"] = nome
+        hasMap["dtaNasc"] = dtaNasc
+
+        return hasMap
     }
-    fun setDtaNasc(dta_nasc: Int) {
-        this.dta_nasc = dta_nasc
-    }
-    fun getDtaNasc(): Int? {
-        return dta_nasc
+
+    companion object{
+        fun fromHash(hashMap:  HashMap<String, Any?>) : profile{
+            val item = profile(
+                hashMap["nome"].toString(),
+                hashMap["dtaNasc"].toString()
+            )
+            return item
+        }
     }
 }
