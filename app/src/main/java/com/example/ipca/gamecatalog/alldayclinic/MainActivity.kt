@@ -20,7 +20,7 @@ private lateinit var auth : FirebaseAuth
         val email = findViewById<TextView>(R.id.editTextUtente)
         val password = findViewById<TextView>(R.id.editTextPassword)
         val btnLogin = findViewById<Button>(R.id.btn_login)
-        btnLogin.setOnClickListener {  auth = getInstance()
+        btnLogin.setOnClickListener { auth = getInstance()
             auth.signInWithEmailAndPassword(email.text.toString(), password.text.toString())
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
@@ -31,10 +31,7 @@ private lateinit var auth : FirebaseAuth
                         } else {
                             Toast.makeText(this@MainActivity, "Email ou palavra-passe incorreta", Toast.LENGTH_SHORT).show()
                         }
-
-
                     }
-
         }
     }
 
