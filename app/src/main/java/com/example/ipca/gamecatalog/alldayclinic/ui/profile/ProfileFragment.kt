@@ -37,7 +37,7 @@ private var currentUser : profile? = null
         //val reference = FirebaseFirestore.getInstance()
             //.collection("users")
            // .document(uid.toString())
-        val year: Int =  Calendar.getInstance().get(Calendar.YEAR);
+        val year: Int =  Calendar.getInstance().get(Calendar.YEAR)
         val root = inflater.inflate(R.layout.fragment_profile, container, false)
         val text_nome : TextView = root.findViewById(R.id.text_name)
         val text_idade : TextView = root.findViewById(R.id.text_age)
