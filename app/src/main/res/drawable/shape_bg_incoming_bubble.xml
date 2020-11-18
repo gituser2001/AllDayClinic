@@ -12,11 +12,15 @@
         </rotate>
     </item>
     <item android:left="10dp">
+
         <shape android:shape="rectangle">
             <stroke
                 android:width="3dp"
                 android:color="@color/purple_700"/>
             <solid android:color="@android:color/white"/>
+            <stroke
+                android:width="3dp"
+                android:color="@color/purple_700"/>
             <corners android:bottomLeftRadius="6dp"
                 android:bottomRightRadius="6dp"
                 android:topRightRadius="6dp"/>

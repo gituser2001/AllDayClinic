@@ -13,15 +13,9 @@
         app:layout_constraintEnd_toEndOf="@+id/nav_host_fragment"
         app:layout_constraintStart_toStartOf="@+id/nav_host_fragment"
         android:background="@color/purple_700"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginTop="0dp">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="121dp"
-            android:src="@drawable/logobranco"
-            tools:layout_editor_absoluteX="-3dp"
-            tools:layout_editor_absoluteY="16dp"
-            tools:ignore="MissingConstraints" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,7 +24,14 @@
             app:layout_constraintEnd_toEndOf="@+id/nav_host_fragment"
             app:layout_constraintStart_toStartOf="@+id/nav_host_fragment"
             android:background="@drawable/rounded_red_border"
-            android:layout_marginBottom="0dp">
+            android:layout_marginBottom="0dp"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/logoverde"
+                android:layout_gravity="center"/>
+
 
             <ScrollView
                 android:layout_width="match_parent"
@@ -46,6 +47,7 @@
 
                 </ListView>
             </ScrollView>
+
 
 
         </LinearLayout>
