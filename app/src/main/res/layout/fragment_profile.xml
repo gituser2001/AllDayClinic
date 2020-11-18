@@ -56,34 +56,34 @@
                 android:textColor="@color/purple_700"
                 android:textSize="18sp" />
 
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
                 android:text="Historico de consultas"
                 android:textColor="@color/purple_700"
-                android:textSize="20dp"
-                android:layout_marginTop="40dp"
-                android:layout_gravity="center_horizontal"
-                android:textStyle="bold"/>
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-
-            <ScrollView
+            <ListView
+                android:id="@+id/listViewHistorico"
+                style="@style/Widget.AppCompat.ListView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginBottom="70dp"
+                android:background="@drawable/buttonshape"
+                android:cacheColorHint="#FFFFFF"
+                android:headerDividersEnabled="true"
+                android:scrollbarSize="10dp">
 
-                <ListView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
 
-                    android:layout_marginVertical="40dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/buttonshape"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp">
-
-
-                </ListView>
-            </ScrollView>
+            </ListView>
 
 
         </LinearLayout>

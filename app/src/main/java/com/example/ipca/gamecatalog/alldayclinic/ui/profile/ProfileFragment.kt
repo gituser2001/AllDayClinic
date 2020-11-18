@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.ListView
 import android.widget.TextView
 import android.widget.Toast
 import android.widget.Toast.makeText
@@ -26,12 +28,16 @@ class ProfileFragment : Fragment() {
 private lateinit var auth : FirebaseAuth
     var listUser: profile? = null
 private var currentUser : profile? = null
+    var array = arrayOf("Teste", "Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste")
+
+
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
+
         val uid  = FirebaseAuth.getInstance().uid
         val db = FirebaseFirestore.getInstance()
         //val reference = FirebaseFirestore.getInstance()
@@ -44,6 +50,9 @@ private var currentUser : profile? = null
         auth = Firebase.auth
         val currentUser = auth.currentUser
 
+        val listView :ListView = root.findViewById(R.id.listViewHistorico)
+        val arratAdapter : ArrayAdapter<String> = ArrayAdapter(requireActivity(),android.R.layout.simple_spinner_item,array)
+        listView.adapter = arratAdapter
 
         currentUser!!.uid?.let {
             db.collection("users").document(it)
@@ -74,6 +83,8 @@ private var currentUser : profile? = null
         text_idade.setText("Idade : " + (2020- currentUser!!.getDtaNasc()!!).toString())*/
 
         return root
+
+
 
     }
 
