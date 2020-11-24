@@ -28,8 +28,6 @@ class ProfileFragment : Fragment() {
 private lateinit var auth : FirebaseAuth
     var listUser: profile? = null
 private var currentUser : profile? = null
-    var array = arrayOf("Teste", "Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste")
-
 
 
     override fun onCreateView(
@@ -50,9 +48,7 @@ private var currentUser : profile? = null
         auth = Firebase.auth
         val currentUser = auth.currentUser
 
-        val listView :ListView = root.findViewById(R.id.listViewHistorico)
-        val arratAdapter : ArrayAdapter<String> = ArrayAdapter(requireActivity(),android.R.layout.simple_spinner_item,array)
-        listView.adapter = arratAdapter
+
 
         currentUser!!.uid?.let {
             db.collection("users").document(it)
