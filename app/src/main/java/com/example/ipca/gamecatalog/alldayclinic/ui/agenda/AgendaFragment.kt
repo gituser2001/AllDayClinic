@@ -32,9 +32,7 @@ class AgendaFragment : Fragment() {
             textView.text = it
 
         })
-        val listView : ListView = root.findViewById(R.id.listViewAgenda)
-        val arratAdapter : ArrayAdapter<String> = ArrayAdapter(requireActivity(),android.R.layout.simple_spinner_item,array)
-        listView.adapter = arratAdapter
+        
         return root
     }
 }
