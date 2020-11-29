@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.ipca.gamecatalog.alldayclinic.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -33,7 +32,7 @@ class ChatFragment : Fragment() {
         val currentUser = auth.currentUser
         val root = inflater.inflate(R.layout.fragment_chat, container, false)
         val textView: TextView = root.findViewById(R.id.text_chat)
-            val swiperefresh : SwipeRefreshLayout = root.findViewById(R.id.swiperefresh)
+            //val swiperefresh : SwipeRefreshLayout = root.findViewById(R.id.swiperefresh)
 
          //   swiperefresh.setOnRefreshListener {
            //     fetchCurrentUser()
