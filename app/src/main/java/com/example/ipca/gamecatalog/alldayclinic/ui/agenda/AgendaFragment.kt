@@ -11,12 +11,15 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.ipca.gamecatalog.alldayclinic.R
+import com.example.ipca.gamecatalog.alldayclinic.consulta
+import com.google.firebase.database.DatabaseReference
 
 class AgendaFragment : Fragment() {
 
-    private lateinit var agendaViewModel: AgendaViewModel
-    var array = arrayOf("Teste", "Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste","Teste")
 
+    private lateinit var ref : DatabaseReference
+    private lateinit var listConst : MutableList<consulta>
+    private lateinit var listConsultas : ListView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,14 +27,8 @@ class AgendaFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        agendaViewModel =
-            ViewModelProvider(this).get(AgendaViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_agenda, container, false)
-        val textView: TextView = root.findViewById(R.id.text_agenda)
-        agendaViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
 
-        })
+        val root = inflater.inflate(R.layout.fragment_agenda, container, false)
         
         return root
     }
