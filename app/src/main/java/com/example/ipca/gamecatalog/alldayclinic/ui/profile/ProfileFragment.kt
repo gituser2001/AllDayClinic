@@ -6,11 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.ListView
 import android.widget.TextView
-import android.widget.Toast
-import android.widget.Toast.makeText
 
 import androidx.fragment.app.Fragment
 import com.example.ipca.gamecatalog.alldayclinic.R
@@ -43,8 +39,8 @@ private var currentUser : profile? = null
            // .document(uid.toString())
         val year: Int =  Calendar.getInstance().get(Calendar.YEAR)
         val root = inflater.inflate(R.layout.fragment_profile, container, false)
-        val text_nome : TextView = root.findViewById(R.id.text_name)
-        val text_idade : TextView = root.findViewById(R.id.text_age)
+        val textNome : TextView = root.findViewById(R.id.text_name)
+        val textIdade : TextView = root.findViewById(R.id.text_age)
         auth = Firebase.auth
         val currentUser = auth.currentUser
 
@@ -57,8 +53,8 @@ private var currentUser : profile? = null
                             listUser = profile.fromHash(querySnapshot.data as HashMap<String, Any?>)
                             listUser?.let{ user ->
                                 var dtaNas = (year - user.dtaNasc?.toInt()!!)
-                                text_nome.setText(user.nome)
-                                text_idade.setText("Idade : " + dtaNas.toString())
+                                textNome.setText(user.nome)
+                                textIdade.setText("Idade : " + dtaNas.toString())
                             }
                         }
                     }

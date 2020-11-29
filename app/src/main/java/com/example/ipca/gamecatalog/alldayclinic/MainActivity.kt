@@ -1,5 +1,7 @@
 package com.example.ipca.gamecatalog.alldayclinic
 
+import android.R
+import android.R.id
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -9,17 +11,21 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuth.*
 
+
 class MainActivity : AppCompatActivity() {
 private lateinit var auth : FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
 
         supportActionBar?.hide();
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(com.example.ipca.gamecatalog.alldayclinic.R.layout.activity_main)
 
-        val email = findViewById<TextView>(R.id.editTextUtente)
-        val password = findViewById<TextView>(R.id.editTextPassword)
-        val btnLogin = findViewById<Button>(R.id.btn_login)
+        //Variáveis referentes ao login tais como credenciais e o botão
+        val email = findViewById<TextView>(com.example.ipca.gamecatalog.alldayclinic.R.id.editTextUtente)
+        val password = findViewById<TextView>(com.example.ipca.gamecatalog.alldayclinic.R.id.editTextPassword)
+        val btnLogin = findViewById<Button>(com.example.ipca.gamecatalog.alldayclinic.R.id.btn_login)
+
+        //Efetuo do Login
         btnLogin.setOnClickListener { auth = getInstance()
             auth.signInWithEmailAndPassword(email.text.toString(), password.text.toString())
                     .addOnCompleteListener(this) { task ->
@@ -34,5 +40,4 @@ private lateinit var auth : FirebaseAuth
                     }
         }
     }
-
 }

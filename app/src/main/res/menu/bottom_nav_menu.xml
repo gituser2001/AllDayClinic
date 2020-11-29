@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+     <item android:id="@+id/menu_signout"
+         android:icon="@drawable/logout"
+         android:title="@string/logout"/>
+
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/baseline_ballot_black_18dp"
@@ -14,6 +18,5 @@
     <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/baseline_account_box_black_24dp"
-        android:title="@string/title_notifications" />
-
+        android:title="@string/title_notifications"/>
 </menu>
