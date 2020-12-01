@@ -76,7 +76,8 @@ private var currentUser : profile? = null
 
         return root
 
-
+        //Centrar nome do paciente na view
+        //Botão de logout
 
     }
 
