@@ -1,49 +1,52 @@
 package com.example.ipca.gamecatalog.alldayclinic
 
+import com.google.firebase.auth.FirebaseUser
 import com.google.type.DateTime
 import java.sql.Array
 
 class consulta {
 
-    var nomeMedico : String? = null
-    var data : DateTime? = null
+    var idUser : String? = null
+    var idMedico : String? = null
+  //  var data : Long? = null
     var sala : String? = null
-    var tipoconsulta : String? = null
-    var idconsulta = arrayOf( nomeMedico, data, sala, tipoconsulta)
+    var tipoConsulta : String? = null
 
     constructor(
-            nomeMedico: String?,
-            data: DateTime,
+            idUser: String?,
+            idMedico: String?,
+         //   data: Long?,
             sala: String?,
-            tipoconsulta: String?,
-            idconsulta: Array
+            tipoConsulta: String?
 
     ) {
-        this.nomeMedico = nomeMedico
-        this.data    =   data
+        this.idUser = idUser
+        this.idMedico = idMedico
+      //  this.data    =   data
         this.sala = sala
-        this.tipoconsulta = tipoconsulta
-        this.idconsulta = arrayOf(idconsulta)
+        this.tipoConsulta = tipoConsulta
+
     }
 
     fun toHashMap() : HashMap<String, Any?> {
         val hasMap = HashMap<String, Any?>()
-        hasMap["nomeMedico"] = nomeMedico
-        hasMap["data"] = data
+        hasMap["idUser"] = idUser
+        hasMap["nomeMedico"] = idMedico
+      //  hasMap["data"] = data
         hasMap["sala"] = sala
-        hasMap["tipoconsulta"] = tipoconsulta
-        hasMap["idMedico"] = idconsulta
+        hasMap["tipoConsulta"] = tipoConsulta
+
         return hasMap
     }
 
     companion object{
         fun fromHash(hashMap: HashMap<String, Any>) : consulta{
             val item = consulta(
-                    hashMap["nomeMedico"].toString(),
-                    hashMap["data"] as DateTime,
+                    hashMap["idUser"].toString(),
+                    hashMap["idMedico"].toString(),
+                  //  hashMap["data"] as Long,
                     hashMap["sala"].toString(),
-                    hashMap["tipoconsulta"].toString(),
-                    hashMap["idMedico"] as Array
+                    hashMap["tipoConsulta"].toString()
             )
             return item
         }

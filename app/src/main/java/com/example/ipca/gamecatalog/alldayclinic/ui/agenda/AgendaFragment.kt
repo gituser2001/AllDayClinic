@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.BaseAdapter
 import android.widget.ListView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.ipca.gamecatalog.alldayclinic.R
 import com.example.ipca.gamecatalog.alldayclinic.consulta
@@ -18,8 +20,10 @@ class AgendaFragment : Fragment() {
 
 
     private lateinit var listConst : consulta
-    private lateinit var listConsultas : ListView
+    private lateinit var listViewConsultas : ListView
     private lateinit var auth : FirebaseAuth
+    private var listConsultas : MutableList<consulta> = arrayListOf()
+    var consultaAdapter : BaseAdapter? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,23 +32,66 @@ class AgendaFragment : Fragment() {
     ): View? {
 
         val root = inflater.inflate(R.layout.fragment_agenda, container, false)
+        consultaAdapter = ConsultaAdapter()
+        listViewConsultas = root.findViewById(R.id.listaConsultas)
+        listViewConsultas.adapter = consultaAdapter
         auth = Firebase.auth
         val currentUser = auth.currentUser
         val db = FirebaseFirestore.getInstance()
-        listConsultas = root.findViewById(R.id.listaConsultas)
+
         currentUser!!.uid?.let {
-            db.collection("Consulta").document(it)
+            db.collection("Consulta")
                     .addSnapshotListener { querySnapshot, firebaseFirestoreException ->
-                        querySnapshot?.data?.let {
-                            listConst = consulta.fromHash(querySnapshot.data as HashMap<String, Any>)
-                            listConst?.let{ consulta ->
-                                val arratAdapter : ArrayAdapter<String> = ArrayAdapter(requireActivity(),android.R.layout.simple_spinner_item)
-                                listConsultas.adapter = arratAdapter
+                        querySnapshot?.let {
+                            listConsultas.clear()
+                            for (doc in querySnapshot){
+                                listConst = consulta.fromHash(doc.data as HashMap<String, Any>)
+                                if (currentUser.uid == listConst.idUser){
+                                    listConsultas.add(listConst)
+                                }
                             }
+                            consultaAdapter?.notifyDataSetChanged()
                         }
                     }
         }
         
         return root
+    }
+    inner class ConsultaAdapter : BaseAdapter() {
+
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+
+            var rowView = layoutInflater.inflate(R.layout.rowconsulta, parent, false)
+
+            val textViewTitle = rowView.findViewById<TextView>(R.id.titleConsulta)
+            val textViewSubTitle = rowView.findViewById<TextView>(R.id.subtitleConsulta)
+
+            textViewTitle.text = listConsultas[position].tipoConsulta
+            textViewSubTitle.text = listConsultas[position].sala
+
+
+//            rowView.setOnClickListener {
+//
+//                val intent = Intent(this@MainActivity, GameDetailActivity::class.java)
+//                intent.putExtra("Game Name", games[position].gameName)
+//                intent.putExtra("Company Name", games[position].companyName)
+//                intent.putExtra("Score", games[position].score)
+//                startActivity(intent)
+//            }
+
+            return rowView
+        }
+
+        override fun getItem(position: Int): Any {
+            return listConsultas[position]
+        }
+
+        override fun getItemId(position: Int): Long {
+            return 0
+        }
+
+        override fun getCount(): Int {
+            return listConsultas.size
+        }
     }
 }
