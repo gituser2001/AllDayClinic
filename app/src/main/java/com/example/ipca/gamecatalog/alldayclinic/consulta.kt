@@ -21,11 +21,11 @@ class consulta {
             tipoConsulta: String?
 
     ) {
-        this.idUser = idUser
-        this.idMedico = idMedico
+        this.idUser       =   idUser
+        this.idMedico     =   idMedico
         //this.data    =   data
-        this.sala = sala
-        this.tipoConsulta = tipoConsulta
+        this.sala         =   sala
+        this.tipoConsulta =   tipoConsulta
 
     }
 
