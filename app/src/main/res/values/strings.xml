@@ -12,4 +12,6 @@
     <string name="teresa">Teresa</string>
     <string name="historico_de_consultas">Historico de consultas</string>
     <string name="Mapa">Mapa</string>
+    <string name="nova_mensagem">Nova Mensagem</string>
+    <string name="signout_button">Sair</string>
 </resources>
