@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.ipca.gamecatalog.alldayclinic.ui.chat.ChatFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuth.*
 
@@ -29,6 +30,7 @@ private lateinit var auth : FirebaseAuth
         btnLogin.setOnClickListener { auth = getInstance()
             auth.signInWithEmailAndPassword(email.text.toString(), password.text.toString())
                     .addOnCompleteListener(this) { task ->
+                        //Verificação se o login foi bem sucedido
                         if (task.isSuccessful) {
                             val intent = Intent(this, Agenda::class.java)
                             intent.putExtra("email", email.text.toString())
@@ -38,6 +40,7 @@ private lateinit var auth : FirebaseAuth
                             Toast.makeText(this@MainActivity, "Email ou palavra-passe incorreta", Toast.LENGTH_SHORT).show()
                         }
                     }
+            //token de verificação da sessão
         }
     }
 }

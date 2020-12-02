@@ -1,5 +1,6 @@
 package com.example.ipca.gamecatalog.alldayclinic.ui.chat
 
+//Lastest messages tutorial
 
 import android.content.Intent
 import android.os.Bundle
@@ -14,12 +15,17 @@ import com.google.firebase.ktx.Firebase
 
 
 class ChatFragment : Fragment() {
-    private lateinit var auth : FirebaseAuth
+    private lateinit var auth: FirebaseAuth
 
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         //var view: View = inflater.inflate(R.layout.chat_ultimas_mensagens.container.false)
         super.onCreate(savedInstanceState)
+
 
         //setC(R.layout.news_articles)
 
@@ -29,22 +35,11 @@ class ChatFragment : Fragment() {
         val textView: TextView = root.findViewById(R.id.text_chat)
 
 
-
-
-
-
-
-
-
-
-
-
-
         //val swiperefresh : SwipeRefreshLayout = root.findViewById(R.id.swiperefresh)
-            //swiperefresh.setOnRefreshListener {
-            //     fetchCurrentUser()
-            //   listenForLatestMessages()
-            //}
+        //swiperefresh.setOnRefreshListener {
+        //     fetchCurrentUser()
+        //   listenForLatestMessages()
+        //}
 
         //Não dá override na função e o botão de logout para já não faz nada
         /*override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -59,4 +54,16 @@ class ChatFragment : Fragment() {
 
         return root
     }
+
+
+
+
+
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+
 }

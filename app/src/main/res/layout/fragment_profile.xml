@@ -74,4 +74,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <!--acrescentar botão de logout-->
+
 </androidx.constraintlayout.widget.ConstraintLayout>
