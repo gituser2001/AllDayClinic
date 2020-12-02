@@ -84,4 +84,8 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:26.0.2'
     //noinspection GradleCompatible
     implementation 'com.android.support:cardview-v7:26.0.2'
+
+    //groupie
+    implementation "com.xwray:groupie:2.8.1"
+
 }
