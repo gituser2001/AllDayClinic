@@ -67,7 +67,7 @@ class AgendaFragment : Fragment() {
             val textViewSubTitle = rowView.findViewById<TextView>(R.id.subtitleConsulta)
 
             textViewTitle.text = listConsultas[position].tipoConsulta
-            textViewSubTitle.text = listConsultas[position].sala
+            textViewSubTitle.text = "Sala : "+ listConsultas[position].sala
 
 
 //            rowView.setOnClickListener {
