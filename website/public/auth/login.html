@@ -1,0 +1,206 @@
+<html>
+	<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<style>
+
+			@import url('https://fonts.googleapis.com/css2?family=Amiko:wght@400;600&display=swap');
+
+			body {
+				margin: 0;
+				overflow: hidden;
+				font-family: 'Amiko';
+			}
+
+				.divlogo {
+					border: 5px solid white;
+					background-color: white;    
+					text-align: center;
+					width: 100%
+				}
+
+				.barraTopo {
+
+					border: 5px solid #153939;
+					background-color: #153939;    
+					text-align: center;
+					width: 100%;
+					height: 40px;
+					border-top-left-radius: 25px;
+				}
+
+			.bodymain {
+				width: 100%;
+				height:85vh;
+			}
+
+			.colunaEsq{
+				width: 30%;
+				vertical-align: middle;
+				float:left;
+				height: 100%;
+				text-align: center;
+				background-color: #187C7D;
+			}
+
+				#tituloColEsq {
+					color: white;
+				}
+
+				#email{
+					width: 70%;
+					height: 40px;
+					background-image: url('../imagens/email.png');
+					position: left;
+					padding-left: 50px;
+					background-size: 40px;
+					background-repeat: no-repeat;
+					border: none;
+					outline: none;
+					font-size: 20px;
+
+					margin: auto;
+					background-color: #D5E8E8;
+					border-radius: 25px;
+				}
+
+				#pass{
+					width: 70%;
+					height: 40px;
+					background-image: url('../imagens/pass.png');
+					position: left;
+					padding-left: 50px;
+					background-size: 40px;
+					background-repeat: no-repeat;
+					border: none;
+					outline: none;
+					font-size: 20px;
+
+					margin: auto;
+					background-color: #D5E8E8;
+					border-radius: 25px;
+				}
+
+				#botaoLogin{
+					width: 65%;
+					height: 40px;
+					border: none;
+					outline: none;
+					font-size: 20px;
+					background-color: #153939;
+					color: white;
+					border-radius: 25px;
+				}
+
+			.colunaDir{
+				width: 70%;
+				vertical-align: middle;
+				float:left;
+				height: 100%;
+				text-align: center;
+				background-color: white;
+			}
+
+				#textoRegisto{
+					margin:auto;
+					text-align: center;
+					vertical-align: middle;
+					width: 50%;
+					word-break: keep-all;
+				}
+
+				#botaoRegisto{
+					width: 45%;
+					height: 40px;
+					border: none;
+					outline: none;
+					font-size: 20px;
+					background-color: #153939;
+					color: white;
+					border-radius: 25px;
+				}
+
+		</style>
+
+		<link rel="shortcut icon" type="image/png" href="../imagens/logobranco.png"/>
+
+		<title>Login</title>
+
+	</head>
+
+
+	<body>
+		<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+		<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+		<script src="/__/firebase/6.2.0/firebase-app.js"></script>
+
+		<!-- Add Firebase products that you want to use -->
+		<script src="/__/firebase/6.2.0/firebase-auth.js"></script>
+		<script src="/__/firebase/6.2.0/firebase-firestore.js"></script>
+		
+
+		<div class="cabecalho">
+
+		
+			<div class="divlogo">
+				<img src="../imagens/logoazultexto.png" width="258px" height="91px">
+			</div>
+
+
+			<div class="barraTopo">
+			</div>
+	
+		</div>
+
+		<div class="bodymain">
+
+			<div class="colunaEsq">
+				<h2 id="tituloColEsq">Iniciar Sessão</h2>
+				<br><br><br>
+
+				<form id="formularioLogin">
+
+					<div id="meterEmail">
+						<input id="email" placeholder="Email" type="email" required>
+					</div>
+					<br><br><br>
+
+					<div id="meterPass">
+						<input id="pass" placeholder="Palavra-Passe" type="password" required>
+					</div>
+					<br><br><br>
+
+					<a href="" style="color:#153939;">Esqueci-me da Palavra-Passe</a>
+					<br><br><br><br>
+
+					<button id="botaoLogin">Iniciar Sessão</button>
+
+				</form>
+
+			</div>
+
+			<div class="colunaDir">
+				
+				<br><br><br>
+				<h2>Registar</h2>
+				<br><br><br>
+				
+				<div id="textoRegisto">
+					<h2>Se ainda não tem uma conta na aplicação AllDayClinic utilize esta opção para aceder ao formulário de registo.</h2>
+				</div>
+				<br><br><br><br><br>
+
+				<button id="botaoRegisto" onclick="document.location='regist.html'">Criar Conta</button>
+						
+
+	
+				<div>
+				</div>
+			</div>
+
+		</div>
+	</body>
+</html>

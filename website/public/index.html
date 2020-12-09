@@ -1,0 +1,104 @@
+<html>
+	<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<style>
+
+			@import url('https://fonts.googleapis.com/css2?family=Amiko:wght@400;600&display=swap');
+
+			body {
+				margin: 0;
+				overflow: hidden;
+				background-color: #187C7D;
+				font-family: 'Amiko';
+			}
+
+			.divEsq{
+				width: 50%;
+				height:100%;
+				text-align: center;
+				display: flex;
+				float:left;
+  				justify-content: center;
+  				align-items: center;
+			}
+
+				#imagem{
+					width: 70%;
+				}
+			
+			.divDir{
+				width: 50%;
+				height: 100%;
+				float:left;
+				text-align: center;
+			}
+
+				#titulo{
+					color: #153939;
+				}
+
+				#textoMain{
+					margin:auto;
+					vertical-align: middle;
+					color: white;
+					width: 50%;
+					word-break: keep-all;
+
+				}
+
+				#botao{
+					width: 65%;
+					height: 40px;
+					border: none;
+					outline: none;
+					font-size: 20px;
+					background-color: #153939;
+					color: white;
+					border-radius: 25px;
+				}
+
+			
+		</style>
+
+		<link rel="shortcut icon" type="image/png" href="imagens/logobranco.png"/>
+
+		<title>AllDayClinic</title>
+
+	</head>
+
+
+	<body>
+		<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+		<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+		<script src="/__/firebase/6.2.0/firebase-app.js"></script>
+
+		<!-- Add Firebase products that you want to use -->
+		<script src="/__/firebase/6.2.0/firebase-auth.js"></script>
+		<script src="/__/firebase/6.2.0/firebase-firestore.js"></script>
+		
+
+		<div class="divEsq">
+
+			<img id="imagem" src="imagens/logobrancotexto.png">
+
+		</div>
+
+		<div class="divDir">
+
+			<br><br><br><br><br><br>
+			<h1 id="titulo">Bem-vindo</h1>
+			<br><br><br><br>
+
+			<h2 id="textoMain">A AllDayClinic é uma apicação móvel (app) reservada só para utentes de doenças neuromusculares do Centro Hospitalar de Vila Nova de Gaia (CHVNGE). Peremite o acesso às suas marcações e muito mais.</h2>
+
+			<br><br><br><br>
+
+			<button id="botao" onclick="document.location='auth/login.html'">Iniciar</button>
+
+		</div>
+	</body>
+</html>
