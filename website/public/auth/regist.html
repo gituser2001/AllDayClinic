@@ -63,9 +63,9 @@
 			
 		</style>
 
-		<link rel="shortcut icon" type="image/png" href="imagens/logobranco.png"/>
+		<link rel="shortcut icon" type="image/png" href="../imagens/logobranco.png"/>
 
-		<title>AllDayClinic</title>
+		<title>Registo</title>
 
 	</head>
 
@@ -83,21 +83,29 @@
 
 		<div class="divEsq">
 
-			<img id="imagem" src="imagens/logobrancotexto.png">
+			<img id="imagem" src="../imagens/logobrancotexto.png">
 
 		</div>
 
 		<div class="divDir">
 
-			<br><br><br><br><br><br>
-			<h1 id="titulo">Bem-vindo</h1>
-			<br><br><br><br>
+            <div>
+                <h4>Registo</h4><br>
+                <form id="formularioRegisto">
 
-			<h2 id="textoMain">A AllDayClinic é uma apicação móvel (app) reservada só para utentes de doenças neuromusculares do Centro Hospitalar de Vila Nova de Gaia (CHVNGE). Peremite o acesso às suas marcações e muito mais.</h2>
+                    <div id="meterEmail">
+                        <input type="email" placeholder="Email" id="registoEmail" required>
+                    </div>
 
-			<br><br><br><br>
+                    <div id="meterPass">
+                        <input type="password" placeholder="Palavra-Passe" id="registoPass" required>
+                    </div>
 
-			<button id="botao" onclick="document.location='auth/login.html'">Iniciar</button>
+                    <button id="botaoRegisto">Registar</button>
+
+                </form>
+
+            </div>
 
 		</div>
 	</body>

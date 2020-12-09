@@ -11,6 +11,7 @@
 			body {
 				margin: 0;
 				overflow: hidden;
+				font-family: 'Amiko';
 			}
 
 				.divlogo {
@@ -42,7 +43,6 @@
 				height: 100%;
 				text-align: center;
 				background-color: #187C7D;
-				font-family: 'Amiko';
 			}
 
 				#tituloColEsq {
@@ -52,7 +52,7 @@
 				#email{
 					width: 70%;
 					height: 40px;
-					background-image: url('imagens/email.png');
+					background-image: url('../imagens/email.png');
 					position: left;
 					padding-left: 50px;
 					background-size: 40px;
@@ -60,7 +60,6 @@
 					border: none;
 					outline: none;
 					font-size: 20px;
-					font-family: 'Amiko';
 
 					margin: auto;
 					background-color: #D5E8E8;
@@ -70,7 +69,7 @@
 				#pass{
 					width: 70%;
 					height: 40px;
-					background-image: url('imagens/pass.png');
+					background-image: url('../imagens/pass.png');
 					position: left;
 					padding-left: 50px;
 					background-size: 40px;
@@ -78,7 +77,6 @@
 					border: none;
 					outline: none;
 					font-size: 20px;
-					font-family: 'Amiko';
 
 					margin: auto;
 					background-color: #D5E8E8;
@@ -93,7 +91,6 @@
 					font-size: 20px;
 					background-color: #153939;
 					color: white;
-					font-family: 'Amiko';
 					border-radius: 25px;
 				}
 
@@ -104,7 +101,6 @@
 				height: 100%;
 				text-align: center;
 				background-color: white;
-				font-family: 'Amiko';
 			}
 
 				#textoRegisto{
@@ -123,15 +119,14 @@
 					font-size: 20px;
 					background-color: #153939;
 					color: white;
-					font-family: 'Amiko';
 					border-radius: 25px;
 				}
 
 		</style>
 
-		<link rel="shortcut icon" type="image/png" href="imagens/logobranco.png"/>
+		<link rel="shortcut icon" type="image/png" href="../imagens/logobranco.png"/>
 
-		<title>AllDayClinic</title>
+		<title>Login</title>
 
 	</head>
 
@@ -151,7 +146,7 @@
 
 		
 			<div class="divlogo">
-				<img src="imagens\logoazulescuro.png" width="258px" height="91px">
+				<img src="../imagens/logoazultexto.png" width="258px" height="91px">
 			</div>
 
 
@@ -166,17 +161,24 @@
 				<h2 id="tituloColEsq">Iniciar Sessão</h2>
 				<br><br><br>
 
-				<input id="email" placeholder="Email" type="text" value>
+				<form id="formularioLogin">
 
-				<br><br><br>
+					<div id="meterEmail">
+						<input id="email" placeholder="Email" type="email" required>
+					</div>
+					<br><br><br>
 
-				<input id="pass" placeholder="Palavra-Passe" type="password" value>
-				<br><br><br>
+					<div id="meterPass">
+						<input id="pass" placeholder="Palavra-Passe" type="password" required>
+					</div>
+					<br><br><br>
 
-				<a href="" style="color:#153939;">Esqueci-me da Palavra-Passe</a>
-				<br><br><br><br>
+					<a href="" style="color:#153939;">Esqueci-me da Palavra-Passe</a>
+					<br><br><br><br>
 
-				<button id="botaoLogin">Iniciar Sessão</button>
+					<button id="botaoLogin">Iniciar Sessão</button>
+
+				</form>
 
 			</div>
 
@@ -191,7 +193,7 @@
 				</div>
 				<br><br><br><br><br>
 
-				<button id="botaoRegisto">Criar Conta</button>
+				<button id="botaoRegisto" onclick="document.location='regist.html'">Criar Conta</button>
 						
 
 	
