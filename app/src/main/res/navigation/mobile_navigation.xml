@@ -12,10 +12,10 @@
         tools:layout="@layout/fragment_agenda" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.ipca.gamecatalog.alldayclinic.ui.chat.ChatFragment"
+        android:id="@+id/nav_map"
+        android:name="com.example.ipca.gamecatalog.alldayclinic.fragment_map"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_chat" />
+        tools:layout="@layout/fragment_map" />
 
     <fragment
         android:id="@+id/navigation_notifications"

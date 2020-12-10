@@ -11,7 +11,7 @@
         android:icon="@drawable/baseline_account_box_black_24dp"
         android:title="@string/title_notifications"/>
 
-    <item android:id="@+id/menu_mapa"
+    <item android:id="@+id/nav_map"
         android:icon="@drawable/ic_baseline_location_on_24"
         android:title="@string/Mapa"/>
 </menu>
