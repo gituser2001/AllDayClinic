@@ -18,7 +18,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginVertical="20dp"
         android:text="Nome"
         android:textColor="@color/white"
         android:textSize="16sp"
@@ -28,19 +28,6 @@
         tools:layout_editor_absoluteY="51dp"
         android:layout_marginHorizontal="10dp"/>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:text="Nome"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="59dp"
-        tools:layout_editor_absoluteY="51dp"
-        android:layout_marginHorizontal="10dp"/>
     </LinearLayout>
 
 
