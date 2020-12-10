@@ -21,13 +21,10 @@ class NewMessageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_message)
 
-        //Título da activity
-        supportActionBar?.title = "Escolha um utilizador"
-
+        supportActionBar?.hide()
 
         val adapter = GroupAdapter<GroupieViewHolder>()
         val recyclerViewNewMessage = findViewById<RecyclerView>(R.id.recyclerview_new_message)
-
 
         recyclerViewNewMessage.adapter = adapter
 
@@ -62,8 +59,6 @@ class UserItem(val user: profile) : Item<GroupieViewHolder>()
     {
         val textview = viewHolder.itemView.findViewById<TextView>(R.id.textView)
         textview.text = user.nome
-        val textview2 = viewHolder.itemView.findViewById<TextView>(R.id.textView2)
-        textview2.text = user.dtaNasc
     }
 
     override fun getLayout(): Int {
