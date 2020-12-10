@@ -63,70 +63,87 @@
                         background-color: #153939;    
                         text-align: center;
                         width: 100%;
+                        position: relative;
+                        z-index: 2;
                         height: 40px;
                         border-top-left-radius: 25px;
                     }  
 
             .bodymain {
-                width: 100%;
                 height:85%;
-                border-collapse: collapse;
+                background-color: #D5E8E8;
             }
 
-                .colunaEsq{
-                    width: 50%;
-                    vertical-align: middle;
+                #divNome{
+                    width: 20%;
+                    height:100%;
+                    z-index: 2;
+                    position: relative;
                     float:left;
-                    height: 100%;
                     text-align: center;
-                    background-color: #187C7D;
                     color: white;
                 }
 
-                    #nome{
-                        float: left;
-                        width: 40%;
-                        
-                    }
-
-                    #nUtente{
-                        float: left;
-                        width: 40%;
-                    }
-
-                .colunaMeio{
-                    position: absolute;
-                    top: 40%;
-                    -ms-transform: translateY(-60%);
-                    transform: translateY(-60%);
-                    left: 50%;
-                    -ms-transform: translateX(-50%);
-                    transform: translateX(-50%);
-                }
-
-                    #divMeio{
-                            float: left;
-                            width: 20%;
-                        }
-
-                .colunaDir{
-                    width: 50%;
-                    vertical-align: middle;
+                #divNUtente{
+                    width: 20%;
+                    height:100%;
+                    position: relative;
+                    z-index: 2;
                     float:left;
-                    height: 100%;
                     text-align: center;
-                    background-color: #D5E8E8;
+                    color: white;
                 }
 
-                    #idade{
-                        float: right;
-                        width: 40%;
+                #divLogoBotao{
+                    width: 20%;
+                    height:100%;
+                    position: relative;
+                    z-index: 2;
+                    float:left;
+                    text-align: center;
+                    color: white;
+                }
+
+                    #botaoTerminar{
+                        width: 90%;
+                        height: 40px;
+                        border: none;
+                        outline: none;
+                        font-size: 20px;
+                        background-color: #153939;
+                        color: white;
+                        border-radius: 25px;
                     }
 
-                    #cidade{
-                        float: right;
-                        width: 40%;
-                    }
+                #divIdade{
+                    width: 20%;
+                    height:100%;
+                    position: relative;
+                    z-index: 2;
+                    float:left;
+                    text-align: center;
+                    color: #187C7D;
+                }
+
+                #divCidade{
+                    width: 20%;
+                    height:100%;
+                    position: relative;
+                    z-index: 2;
+                    float:left;
+                    text-align: center;
+                    color: #187C7D;
+                }
+
+                #background {
+                    position: fixed;
+                    bottom: 0px;
+                    left: 0px;
+                    width: 50%;
+                    height: 85%;
+                    background-color: #187C7D;
+                    z-index: 1;
+                }
 
                 
 
@@ -161,7 +178,8 @@
                     <br>
                     <a href="" style="color:#D5E8E8;">Chat</a>
                 </div>
-                    
+                
+                
                 <div id="divlogo">
                     <img src="imagens/logoazul.png" height="91px">
                 </div>
@@ -185,52 +203,43 @@
 
 		<div class="bodymain">
 
-			<div class="colunaEsq">
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                <div style="width: 100%; height: 100%;">
-
-                    <div id="nome"> 
-                        <h2>Nome</h2>
-                        <h3>Maria Silva</h3>
-                    </div>
-
-                    <div id="nUtente">
-                        <h2>Nº de Utente</h2>
-                        <h3>18153</h3>
-                    </div>
-
-                </div>
-            </div>
-                
-            <div class="colunaMeio">
-        
-                <div class="divGeral">
-                    <div id="divFora">
-                        <img src="imagens/logobranco.png">
-                    </div>
-                </div>
-
+            <div id="divNome">
+                <br>
+                <h2>Nome</h2>
+                <h3>Maria Silva</h3>
             </div>
 
-
-			<div class="colunaDir">
-
-				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                <div style="width: 100%; height: 100%;">
-
-                    <div id="idade"> 
-                        <h2>Idade</h2>
-                        <h3>53</h3>
-                    </div>
-
-                    <div id="cidade">
-                        <h2>Cidade</h2>
-                        <h3>Porto</h3>
-                    </div>
-                </div>
+            <div id="divNUtente">
+                <br>
+                <h2>Nº de Utente</h2>
+                <h3>18153</h3>
+            </div>
                 
-			</div>
+            
+            <div id="divLogoBotao">
+                <img src="imagens/logobranco.png" height="20%">
+
+                <br><br><br><br>
+                <button id="botaoTerminar" onclick="document.location='auth/login.html'">Terminar Sessão</button>
+            </div>
+
+            <div id="divIdade">
+                <br>
+                <h2>Idade</h2>
+                <h3>53</h3>
+            </div>
+
+            <div id="divCidade">
+                <br>
+                <h2>Cidade</h2>
+                <h3>Porto</h3>
+            </div>
+
+            <div id="background"></div>
+
+			
 
 		</div>
     </body>
