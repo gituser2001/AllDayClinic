@@ -2,13 +2,16 @@ package com.example.ipca.gamecatalog.alldayclinic.ui.profile
 
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 
 import androidx.fragment.app.Fragment
+import com.example.ipca.gamecatalog.alldayclinic.MainActivity
 import com.example.ipca.gamecatalog.alldayclinic.R
 import com.example.ipca.gamecatalog.alldayclinic.profile
 import com.google.firebase.auth.FirebaseAuth
@@ -41,6 +44,7 @@ private var currentUser : profile? = null
         val root = inflater.inflate(R.layout.fragment_profile, container, false)
         val textNome : TextView = root.findViewById(R.id.text_name)
         val textIdade : TextView = root.findViewById(R.id.text_age)
+        val logout : Button = root.findViewById(R.id.logout)
         auth = Firebase.auth
         val currentUser = auth.currentUser
 
@@ -59,6 +63,13 @@ private var currentUser : profile? = null
                         }
                     }
         }
+        logout.setOnClickListener {
+            Firebase.auth.signOut()
+            val intent= Intent(activity, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+
 
         /*reference.addSnapshotListener { querySnapshot, e ->
 
