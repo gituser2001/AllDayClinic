@@ -37,20 +37,99 @@
 			}
 
 				#titulo{
-					color: #153939;
-				}
-
-				#textoMain{
-					margin:auto;
-					vertical-align: middle;
 					color: white;
-					width: 50%;
-					word-break: keep-all;
-
+					width: 60%;
+					font-size: 25px;
+					text-align: center;
 				}
 
-				#botao{
-					width: 65%;
+				#meterNome{
+					width: 60%;
+					height: 40px;
+					background-image: url('../imagens/nome.png');
+					position: left;
+					padding-left: 50px;
+					background-size: 40px;
+					background-repeat: no-repeat;
+					border: none;
+					outline: none;
+					font-size: 20px;
+
+					margin: auto;
+					background-color: #D5E8E8;
+					border-radius: 25px;
+				}
+
+				#meterAno{
+					width: 60%;
+					height: 40px;
+					background-image: url('../imagens/calendario.png');
+					position: left;
+					padding-left: 50px;
+					background-size: 40px;
+					background-repeat: no-repeat;
+					border: none;
+					outline: none;
+					font-size: 20px;
+
+					margin: auto;
+					background-color: #D5E8E8;
+					border-radius: 25px;
+				}
+
+				#registoEmail{
+					width: 60%;
+					height: 40px;
+					background-image: url('../imagens/email.png');
+					position: left;
+					padding-left: 50px;
+					background-size: 40px;
+					background-repeat: no-repeat;
+					border: none;
+					outline: none;
+					font-size: 20px;
+
+					margin: auto;
+					background-color: #D5E8E8;
+					border-radius: 25px;
+				}
+
+				#registoPass{
+					width: 60%;
+					height: 40px;
+					background-image: url('../imagens/pass.png');
+					position: left;
+					padding-left: 50px;
+					background-size: 40px;
+					background-repeat: no-repeat;
+					border: none;
+					outline: none;
+					font-size: 20px;
+
+					margin: auto;
+					background-color: #D5E8E8;
+					border-radius: 25px;
+				}
+			
+				#meterConfirmPass{
+					width: 60%;
+					height: 40px;
+					background-image: url('../imagens/pass.png');
+					position: left;
+					padding-left: 50px;
+					background-size: 40px;
+					background-repeat: no-repeat;
+					border: none;
+					outline: none;
+					font-size: 20px;
+
+					margin: auto;
+					background-color: #D5E8E8;
+					border-radius: 25px;
+				}
+
+				#botaoRegisto{
+					width: 45%;
 					height: 40px;
 					border: none;
 					outline: none;
@@ -59,8 +138,6 @@
 					color: white;
 					border-radius: 25px;
 				}
-
-			
 		</style>
 
 		<link rel="shortcut icon" type="image/png" href="../imagens/logobranco.png"/>
@@ -106,20 +183,31 @@
 		<div class="divDir">
 
             <div>
-                <h4>Registo</h4><br>
-                <form id="formularioRegisto">
+				<br><br><br>
+                <h4 id="titulo">Registo</h4><br>
+                <br>
 
-                    <div id="meterEmail">
-                        <input type="email" placeholder="Email" id="registoEmail" required>
-                    </div>
+				<input type="text" placeholder="Nome" id="meterNome" required>
+				<br><br>
 
-                    <div id="meterPass">
-                        <input type="password" placeholder="Palavra-Passe" id="registoPass" required>
-                    </div>
+				
+				<input type="text" placeholder="Ano de Nascimento" id ="meterAno" required>
+				<br><br>
 
-                    <button id="botaoRegisto" onclick="document.location='login.html'">Registar</button>
+				<input type="email" placeholder="Email" id="registoEmail" required>
+				<br><br>
 
-                </form>
+				
+				<input type="password" placeholder="Palavra-Passe" id="registoPass" required>
+				<br><br>
+				
+				
+				<input type="password" placeholder="Confirmar Palavra-Passe" id = "meterConfirmPass" required>
+				<br><br><br><br>
+
+
+
+				<button id="botaoRegisto" onclick="document.location='login.html'">Criar Conta</button>
 
             </div>
 

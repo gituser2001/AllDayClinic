@@ -2,6 +2,7 @@ package com.example.ipca.gamecatalog.alldayclinic
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -25,16 +26,20 @@ private lateinit var auth : FirebaseAuth
 
         //Efetuo do Login
         btnLogin.setOnClickListener { auth = getInstance()
+
             auth.signInWithEmailAndPassword(email.text.toString(), password.text.toString())
                     .addOnCompleteListener(this) { task ->
-                        //Verificação se o login foi bem sucedido
                         if (task.isSuccessful) {
+                            // Sign in success, update UI with the signed-in user's information
                             val intent = Intent(this, Agenda::class.java)
                             intent.putExtra("email", email.text.toString())
                             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                             startActivity(intent)
                         } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w("TAG", "signInWithEmail:failure", task.exception)
                             Toast.makeText(this@MainActivity, "Email ou palavra-passe incorreta", Toast.LENGTH_SHORT).show()
+
                         }
                     }
             //token de verificação da sessão

@@ -1,3 +1,4 @@
+
 Instuções Fisebase:
 
 (O símbolo ">" é somente uma representação da execução da consola. Caso queira utilizar os comandos mencionados abaixo, escreva somente o que se encontra em frente deste mesmo símbolo)
@@ -5,7 +6,7 @@ Instuções Fisebase:
 
 Comando para instalar as ferramentas do Firebase:
 
-	>-npm install -g firebase-tools
+	>npm install -g firebase-tools
 
 
 Comando para associar a sua conta Firebase com as ferramentas do Firebase instaladas anteriormente:	

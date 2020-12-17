@@ -13,25 +13,15 @@
           "package_name": "com.example.ipca.gamecatalog.alldayclinic"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "1019067873830-chg3i09u19gsl430r8eu2tka4413q9k8.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCEYc2ze339RxpyPL6sTq4DgxyMGQuDCwI"
+          "current_key": "AIzaSyB7E4l6Uld9gNRKcOgauiYAT9bkAU5W_y8"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1019067873830-chg3i09u19gsl430r8eu2tka4413q9k8.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

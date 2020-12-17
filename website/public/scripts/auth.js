@@ -7,7 +7,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         if (user != null){
             var email_id = user.email;
         }
-})
+}
 
 
 function login(){
