@@ -9,11 +9,19 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.AllDayClinic">
-        <activity android:name=".ui.chat.NewMessageActivity"></activity>
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.chat.LatestMessageActivity"/>
+        <activity android:name=".MapActivity"></activity>
+        <activity android:name=".ui.chat.NewMessageActivity" />
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".ui.chat.LatestMessageActivity" />
 
         <activity android:name=".ui.chat.LatestMessageActivity" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
         <activity
             android:name=".Agenda"
             android:label="@string/title_activity_agenda" />
