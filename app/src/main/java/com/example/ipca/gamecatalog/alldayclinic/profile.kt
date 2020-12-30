@@ -1,18 +1,10 @@
 package com.example.ipca.gamecatalog.alldayclinic
 
-class profile {
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 
-    var nome    : String?   = null
-    var dtaNasc : String?   = null
-
-    constructor(
-        nome: String?,
-        dtaNasc: String?
-
-    ) {
-        this.nome       = nome
-        this.dtaNasc    = dtaNasc
-    }
+@Parcelize
+class profile(var nome: String?, var dtaNasc: String?) : Parcelable {
 
     fun toHashMap() : HashMap<String, Any?>{
         val hasMap = HashMap<String, Any?>()
@@ -32,3 +24,4 @@ class profile {
         }
     }
 }
+
