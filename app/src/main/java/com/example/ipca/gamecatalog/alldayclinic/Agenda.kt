@@ -10,6 +10,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.ipca.gamecatalog.alldayclinic.ui.chat.LatestMessageActivity
 import com.example.ipca.gamecatalog.alldayclinic.ui.chat.NewMessageActivity
 
 
@@ -26,7 +27,7 @@ class Agenda : AppCompatActivity() {
 
 
         chat.setOnClickListener {
-            val intent = Intent(this, NewMessageActivity::class.java)
+            val intent = Intent(this, LatestMessageActivity::class.java)
             startActivity(intent)
         }
         val navController = findNavController(R.id.nav_host_fragment)
