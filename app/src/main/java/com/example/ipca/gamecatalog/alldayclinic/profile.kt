@@ -9,9 +9,9 @@ class profile(var uid: String?,var nome: String?, var dtaNasc: String?) : Parcel
 
     fun toHashMap() : HashMap<String, Any?>{
         val hasMap = HashMap<String, Any?>()
-        hasMap["nome"] = nome
-        hasMap["dtaNasc"] = dtaNasc
-        hasMap["uid"] = uid
+        hasMap["uid"] = nome
+        hasMap["nome"] = dtaNasc
+        hasMap["dtaNasc"] = uid
 
         return hasMap
     }
@@ -19,9 +19,9 @@ class profile(var uid: String?,var nome: String?, var dtaNasc: String?) : Parcel
     companion object{
         fun fromHash(hashMap:  HashMap<String, Any?>) : profile{
             val item = profile(
+                hashMap["uid"].toString(),
                 hashMap["nome"].toString(),
-                hashMap["dtaNasc"].toString(),
-                hashMap["uid"].toString()
+                hashMap["dtaNasc"].toString()
             )
             return item
         }

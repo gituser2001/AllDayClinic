@@ -56,7 +56,7 @@ private var currentUser : profile? = null
                         querySnapshot?.data?.let {
                             listUser = profile.fromHash(querySnapshot.data as HashMap<String, Any?>)
                             listUser?.let{ user ->
-                                var dtaNas = (year - user.dtaNasc?.toInt()!!)
+                                val dtaNas = (year - user.dtaNasc?.toInt()!!)
                                 textNome.setText(user.nome)
                                 textIdade.setText("Idade : " + dtaNas.toString())
                             }

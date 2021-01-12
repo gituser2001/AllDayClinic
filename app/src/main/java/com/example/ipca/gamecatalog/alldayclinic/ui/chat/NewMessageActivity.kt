@@ -45,9 +45,9 @@ class NewMessageActivity : AppCompatActivity() {
                 val recyclerViewNewMessage = findViewById<RecyclerView>(R.id.recyclerview_new_message)
                 if (value != null ){
                     for (doc in value ){
-                        val user = profile(doc.data.getValue("dtaNasc").toString(),
+                        val user = profile(doc.data.getValue("uid").toString(),
                                            doc.data.getValue("nome").toString(),
-                                           doc.data.getValue("uid").toString())
+                                           doc.data.getValue("dtaNasc").toString())
                         adapter.add(UserItem(user))
                     }
                 }

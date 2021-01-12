@@ -66,13 +66,13 @@ class ChatLogActivity : AppCompatActivity() {
 
                     if (message!!.fromId == FirebaseAuth.getInstance().uid) {
 
-                        val currentUser = LatestMessageActivity.currentUser
+                        //val currentUser = LatestMessageActivity.currentUser
 
-                        adapter.add(ChatToItem(message!!.text.toString(), currentUser!!))
+                        adapter.add(ChatToItem(message!!.text.toString()/*, currentUser!!*/))
                     }
                     else {
 
-                        adapter.add(ChatFromItem(message!!.text.toString(), toUser!!))
+                        adapter.add(ChatFromItem(message!!.text.toString()/*, toUser!!*/))
 
                     }
                 }
@@ -121,7 +121,7 @@ class ChatLogActivity : AppCompatActivity() {
     }
 }
 
-class ChatFromItem (val text : String, val user : profile) : Item<GroupieViewHolder>(){
+class ChatFromItem (val text : String/*, val user : profile*/) : Item<GroupieViewHolder>(){
 
     override fun bind(viewHolder: GroupieViewHolder, position: Int) {
         viewHolder.itemView.textview_from_row.text = text
@@ -133,7 +133,7 @@ class ChatFromItem (val text : String, val user : profile) : Item<GroupieViewHol
     }
 }
 
-class ChatToItem (val text : String, val user : profile):Item<GroupieViewHolder>() {
+class ChatToItem (val text : String/*, val user : profile*/):Item<GroupieViewHolder>() {
 
     override fun bind(viewHolder: GroupieViewHolder, position: Int) {
 

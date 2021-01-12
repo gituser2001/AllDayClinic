@@ -27,7 +27,7 @@ class Agenda : AppCompatActivity() {
 
 
         chat.setOnClickListener {
-            val intent = Intent(this, LatestMessageActivity::class.java)
+            val intent = Intent(this, NewMessageActivity::class.java)
             startActivity(intent)
         }
         val navController = findNavController(R.id.nav_host_fragment)
