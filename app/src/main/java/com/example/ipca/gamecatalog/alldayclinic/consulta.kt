@@ -9,14 +9,14 @@ class consulta {
 
     var idUser : String? = null
     var idMedico : String? = null
-    //var data : com.google.firebase.Timestamp? = null
+    //var data : Long? = null
     var sala : String? = null
     var tipoConsulta : String? = null
 
     constructor(
             idUser: String?,
             idMedico: String?,
-            //data: com.google.firebase.Timestamp?,
+            //data: Long?,
             sala: String?,
             tipoConsulta: String?
 
@@ -45,7 +45,7 @@ class consulta {
             val item = consulta(
                     hashMap["idUser"].toString(),
                     hashMap["idMedico"].toString(),
-                    //hashMap["data"] as com.google.firebase.Timestamp,
+                    //hashMap["data"] as Long,
                     hashMap["sala"].toString(),
                     hashMap["tipoConsulta"].toString()
             )

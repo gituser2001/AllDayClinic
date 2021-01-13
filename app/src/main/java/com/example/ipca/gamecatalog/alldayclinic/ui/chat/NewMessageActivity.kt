@@ -8,21 +8,26 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ipca.gamecatalog.alldayclinic.R
 import com.example.ipca.gamecatalog.alldayclinic.profile
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import com.xwray.groupie.Item
 
 class NewMessageActivity : AppCompatActivity() {
+    private lateinit var auth : FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_message)
 
         supportActionBar?.hide()
+
 
         val adapter = GroupAdapter<GroupieViewHolder>()
         val recyclerViewNewMessage = findViewById<RecyclerView>(R.id.recyclerview_new_message)
@@ -39,6 +44,8 @@ class NewMessageActivity : AppCompatActivity() {
 
     private fun fetchUsers()
     {
+        auth = Firebase.auth
+        val currentUser = auth.currentUser
         val ref = FirebaseFirestore.getInstance().collection("users")
         ref.addSnapshotListener { value, error ->
                 val adapter = GroupAdapter<GroupieViewHolder>()
@@ -48,7 +55,10 @@ class NewMessageActivity : AppCompatActivity() {
                         val user = profile(doc.data.getValue("uid").toString(),
                                            doc.data.getValue("nome").toString(),
                                            doc.data.getValue("dtaNasc").toString())
-                        adapter.add(UserItem(user))
+                        if (currentUser!!.uid != user.uid){
+                            adapter.add(UserItem(user))
+                        }
+
                     }
                 }
 
