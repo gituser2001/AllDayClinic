@@ -4,7 +4,7 @@ import firebase from 'firebase'
 
 try{
 var firebaseConfig = {
-  apiKey: "AIzaSyA2PE4NS_Ua8DfwFzlZeMoTWsLaS_Bq_hY",
+  apiKey: "AIzaSyB7E4l6Uld9gNRKcOgauiYAT9bkAU5W_y8",
   authDomain: "alldayclinic-15a43.firebaseapp.com",
   databaseURL: "https://alldayclinic-15a43.firebaseio.com",
   projectId: "alldayclinic-15a43",
