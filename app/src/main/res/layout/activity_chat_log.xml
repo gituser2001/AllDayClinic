@@ -22,8 +22,8 @@
 
   <EditText
       android:id="@+id/textmessage"
-      android:layout_width="299dp"
-      android:layout_height="37dp"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
       android:background="@drawable/textview_border"
       android:hint="Escrever Mensagem"
       app:layout_constraintBottom_toBottomOf="parent"
