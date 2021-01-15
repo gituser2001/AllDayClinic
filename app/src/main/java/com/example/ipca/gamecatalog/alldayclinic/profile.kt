@@ -9,9 +9,9 @@ class profile(var uid: String?,var nome: String?, var dtaNasc: String?) : Parcel
 
     fun toHashMap() : HashMap<String, Any?>{
         val hasMap = HashMap<String, Any?>()
-        hasMap["uid"] = nome
-        hasMap["nome"] = dtaNasc
-        hasMap["dtaNasc"] = uid
+        hasMap["uid"] = uid
+        hasMap["nome"] = nome
+        hasMap["dtaNasc"] = dtaNasc
 
         return hasMap
     }
