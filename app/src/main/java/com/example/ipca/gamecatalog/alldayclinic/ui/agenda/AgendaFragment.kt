@@ -55,15 +55,17 @@ class AgendaFragment : Fragment() {
                         }
                     }
         }
+
+
         listViewConsultas.setOnItemClickListener { parent , view, position, id ->
             val popup = LayoutInflater.from(activity).inflate(R.layout.popupconsulta,null)
             val mBuilder = AlertDialog.Builder(activity)
                     .setView(popup)
             val mAlertDialog = mBuilder.show()
-            val tipoConsultas = root.findViewById<TextView>(R.id.tipoConsultas)
-            val sala = root.findViewById<TextView>(R.id.sala)
-            //tipoConsultas.text = listConsultas[position].tipoConsulta
-            //sala.text = listConsultas[position].sala
+            val tipoConsultas = popup.findViewById<TextView>(R.id.tipoConsultas)
+            val sala = popup.findViewById<TextView>(R.id.sala)
+            tipoConsultas.text = listConsultas[position].tipoConsulta
+            sala.text ="Sala : " + listConsultas[position].sala
         }
 
 
