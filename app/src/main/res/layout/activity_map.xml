@@ -19,6 +19,11 @@
             android:layout_height="70dp"
             android:src="@drawable/logobranco"
             android:layout_gravity="center"/>
+        <ImageView
+            android:id="@+id/mapa"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/fotomapa"/>
 
     </LinearLayout>
 
