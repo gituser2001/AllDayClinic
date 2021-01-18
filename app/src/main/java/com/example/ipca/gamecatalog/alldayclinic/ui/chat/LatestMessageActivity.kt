@@ -62,6 +62,7 @@ class LatestMessageActivity : AppCompatActivity() {
         listenForLatestMessages()
 
         fetchCurrentUser()
+
     }
 
 
@@ -90,6 +91,7 @@ class LatestMessageActivity : AppCompatActivity() {
                 .document(chatPartnerId)
 
             reference.addSnapshotListener { querySnapshot, e ->
+
                 if (querySnapshot != null) {
 
                     chatPartnerUser = profile(
@@ -116,6 +118,7 @@ class LatestMessageActivity : AppCompatActivity() {
 
         ref.addSnapshotListener { querySnapshot, e ->
 
+            adapter.clear()
             if (querySnapshot != null) {
 
                 for (d in querySnapshot) {
