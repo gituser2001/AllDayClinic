@@ -1,13 +1,12 @@
 package com.example.ipca.gamecatalog.alldayclinic.ui.agenda
 
+import android.app.AlertDialog
 import android.os.Bundle
+import android.text.Layout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.BaseAdapter
-import android.widget.ListView
-import android.widget.TextView
+import android.widget.*
 import androidx.fragment.app.Fragment
 import com.example.ipca.gamecatalog.alldayclinic.R
 import com.example.ipca.gamecatalog.alldayclinic.consulta
@@ -15,6 +14,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.fragment_agenda.*
+import kotlinx.android.synthetic.main.popupconsulta.*
 
 class AgendaFragment : Fragment() {
 
@@ -54,7 +55,18 @@ class AgendaFragment : Fragment() {
                         }
                     }
         }
-        
+        listViewConsultas.setOnItemClickListener { parent , view, position, id ->
+            val popup = LayoutInflater.from(activity).inflate(R.layout.popupconsulta,null)
+            val mBuilder = AlertDialog.Builder(activity)
+                    .setView(popup)
+            val mAlertDialog = mBuilder.show()
+            val tipoConsultas = root.findViewById<TextView>(R.id.tipoConsultas)
+            val sala = root.findViewById<TextView>(R.id.sala)
+            //tipoConsultas.text = listConsultas[position].tipoConsulta
+            //sala.text = listConsultas[position].sala
+        }
+
+
         return root
     }
     inner class ConsultaAdapter : BaseAdapter() {

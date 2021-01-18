@@ -45,6 +45,7 @@ class LatestMessageActivity : AppCompatActivity() {
             val intent = Intent(this, NewMessageActivity::class.java)
             startActivity(intent)
         }
+
         recyclerview_latest_messages.adapter = adapter
         recyclerview_latest_messages.addItemDecoration(
             DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
@@ -89,7 +90,6 @@ class LatestMessageActivity : AppCompatActivity() {
                 .document(chatPartnerId)
 
             reference.addSnapshotListener { querySnapshot, e ->
-
                 if (querySnapshot != null) {
 
                     chatPartnerUser = profile(
