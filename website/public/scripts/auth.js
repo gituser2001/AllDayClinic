@@ -82,17 +82,11 @@ function lerDados(){
     var db = firebase.firestore()
     var userid = firebase.auth().currentUser.uid;
 
-    var docRef = db.collection("users").doc(userid);
+    const UsersRef = db.collection("users").doc(userid);
 
-    docRef.get().then(function(doc) {
-        if (doc.exists) {
-            console.log("Document data:", doc.data());
-        } else {
-            // doc.data() will be undefined in this case
-            console.log("No such document!");
-        }
-    }).catch(function(error) {
-        console.log("Error getting document:", error);
-});
-
+    UsersRef.get().then((doc) => {
+        if (!doc.exists) return;
+        console.log("Document data:", doc.data());
+        // Document data: { title: 'The Great Gatsby' }
+        });
 }
