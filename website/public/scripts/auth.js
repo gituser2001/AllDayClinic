@@ -1,6 +1,3 @@
-
-
-
 function login(){
     var email = document.getElementById("email").value;
     var password = document.getElementById("pass").value;
@@ -80,13 +77,59 @@ function logout(){
 
 function lerDados(){
     var db = firebase.firestore()
-    var userid = firebase.auth().currentUser.uid;
 
-    const UsersRef = db.collection("users").doc(userid);
+    
+
+    /*
+    //este é o que funciona
+
+    const UsersRef = db.collection("users").doc(firebase.auth().currentUser.uid);
 
     UsersRef.get().then((doc) => {
         if (!doc.exists) return;
         console.log("Document data:", doc.data());
         // Document data: { title: 'The Great Gatsby' }
         });
+
+*/
+    /*
+    //este nao sei
+    UsersRef.get()
+    .then((doc) => {
+            var dtaNasc = doc.data().dtaNasc;
+            var nome = doc.data().nome;
+            var uid = firebase.auth().currentUser.uid;
+
+            document.getElementById("dtaNasc").innerText = dtaNasc;   
+            document.getElementById("nome").innerText = nome;
+            document.getElementById("uid").innerText = uid;
+        })
+    .catch(err => {
+        console.log('Error getting documents', err);
+    }); */
+
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // User is signed in.
+          var db = firebase.firestore();
+            var docRef = db.collection("users").doc(user.uid);
+            docRef.get().then(function(doc) {
+               if(doc && doc.exists) {
+               const myData = doc.data();
+               const dtaNasc = myData.dtaNasc;
+               const nome = myData.nome;
+               const uid = myData.uid;
+               document.getElementById("dtaNasc").innerText = dtaNasc;
+               document.getElementById("nome").innerText = nome;
+               document.getElementById("uid").innerText = uid;
+      
+          }
+          })
+          .catch(function(error) {
+          console.log("Got an error: ",error);
+          });
+        } else {
+          // No user is signed in.
+        }
+      });
 }
