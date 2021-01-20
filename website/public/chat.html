@@ -82,6 +82,10 @@
 				background-color: #187C7D;
 			}
 
+                #divCima{
+                    height: 80%;
+                }
+
 				#tituloColEsq {
 					color: white;
 					font-size: 30;
@@ -89,23 +93,25 @@
 
 				#botao{
 					width: 30%;
-					height: 50px;
+					height: 40px;
 					border: none;
 					outline: none;
+					font-size: 20px;
 					background-color: #153939;
 					color: white;
-					vertical-align:middle;
 					border-radius: 25px;
 					cursor: pointer;
 				}
 
-				#botao a{
-					font-size: 20px;
-					float: left;
-					padding-left: 60px;
-					height: 50%;
-					
-				}
+                #divBaixo{
+                    height: 20%;
+                }
+
+                #botaoMais{
+                    color:#153939;
+                    width: 55px;
+					height: 55px;
+                }
 
 			.colunaDir{
 				width: 70%;
@@ -172,29 +178,25 @@
 
 		<div class="bodymain">
 			<div class="colunaEsq">
-				<h2 id="tituloColEsq">Como você está hoje?</h2>
-				<br><br><br>
 
-				<button id="botao" onclick="feedMau()" style="background-image: url(imagens/mal.png); background-repeat: no-repeat; background-origin: content-box;">
-					<a>Mal</a>
-				</button>
-				<br><br><br>
+                <div id="divCima">
+                    <h2 id="tituloColEsq">Como você está hoje?</h2>
+                    <br><br><br>
 
-				<button id="botao" onclick="feedBom()" style="background-image: url(imagens/normal.png); background-repeat: no-repeat; background-origin: content-box;">
-					<a>Normal</a>
-				</button>
-				<br><br><br>
+                    <button id="botao" onclick="feedMau()">Mal</button>
+                    <br><br><br>
 
-				<button id="botao" onclick="feedBom()" style="background-image: url(imagens/bem.png); background-repeat: no-repeat; background-origin: content-box;">
-					<a>Bem</a>
-				</button>
-                <br><br><br>
-                
-                <div>
+                    <button id="botao" onclick="feedBom()">Normal</button>
+                    <br><br><br>
 
-                    
-
+                    <button id="botao" onclick="feedBom()">Bem</button>
+                    <br><br><br>
                 </div>
+                
+                <div id="divBaixo">
+                    <img id="botaoMais" src="imagens/mais.png">
+                </div>
+            </div>
 
 			</div>
 
