@@ -87,7 +87,7 @@
 					font-size: 30;
 				}
 
-				#botao{
+				#botaobom{
 					width: 30%;
 					height: 50px;
 					border: none;
@@ -97,14 +97,51 @@
 					vertical-align:middle;
 					border-radius: 25px;
 					cursor: pointer;
+					background-repeat: no-repeat; 
+					background-origin: content-box;
 				}
 
-				#botao a{
+				#botaomau{
+					width: 30%;
+					height: 50px;
+					border: none;
+					outline: none;
+					background-color: #153939;
+					color: white;
+					vertical-align:middle;
+					border-radius: 25px;
+					cursor: pointer;
+					background-repeat: no-repeat; 
+					background-origin: content-box;
+				}
+
+				#botaochat{
+					width: 30%;
+					height: 50px;
+					border: none;
+					outline: none;
+					background-color: #153939;
+					color: white;
+					vertical-align:middle;
+					border-radius: 25px;
+					cursor: pointer;
+					font-size: 20px;
+					
+				}
+
+				#textobotao{
 					font-size: 20px;
 					float: left;
 					padding-left: 60px;
-					height: 50%;
-					
+					height: 50%;	
+				}
+
+				#divMau{
+					display:none;
+				}
+
+				#divBom{
+					display:none;
 				}
 
 			.colunaDir{
@@ -143,7 +180,7 @@
 
                 <div id="divChat">
                     <br>
-                    <a href="" style="color:#D5E8E8;text-decoration: none;">Chat</a>
+                    <a href="chat.html" style="color:#D5E8E8;text-decoration: none;">Chat</a>
                 </div>
                 
                 
@@ -173,28 +210,43 @@
 		<div class="bodymain">
 			<div class="colunaEsq">
 				<h2 id="tituloColEsq">Como você está hoje?</h2>
-				<br><br><br>
+				<br><br>
 
-				<button id="botao" onclick="feedMau()" style="background-image: url(imagens/mal.png); background-repeat: no-repeat; background-origin: content-box;">
-					<a>Mal</a>
+				<button id="botaomau" onclick="feedMau()" style="background-image: url(imagens/mal.png)">
+					<a id="textobotao">Mal</a>
 				</button>
 				<br><br><br>
 
-				<button id="botao" onclick="feedBom()" style="background-image: url(imagens/normal.png); background-repeat: no-repeat; background-origin: content-box;">
-					<a>Normal</a>
+				<button id="botaobom" onclick="feedBom()" style="background-image: url(imagens/normal.png)">
+					<a id="textobotao">Normal</a>
 				</button>
 				<br><br><br>
 
-				<button id="botao" onclick="feedBom()" style="background-image: url(imagens/bem.png); background-repeat: no-repeat; background-origin: content-box;">
-					<a>Bem</a>
+				<button id="botaobom" onclick="feedBom()" style="background-image: url(imagens/bem.png)">
+					<a id="textobotao">Bem</a>
 				</button>
-                <br><br><br>
+                <br><br><br><br>
                 
                 <div>
+					<div id="divBom">
 
-                    
+						<p>Obrigado pelo seu feedback!</p>
 
-                </div>
+					</div>
+					
+					<div id="divMau">
+						
+						<img src="imagens/doc.png">
+						<br><br>
+
+						<p style="font-size: 20px">Contacte o seu médico</p>
+
+						<button id="botaochat" onclick="location.href ='chat.html'">Ir para o chat</button>
+						
+					</div>
+
+				</div>
+				
 
 			</div>
 
@@ -205,12 +257,12 @@
 				<br><br><br>
 				
 				
-
+ 
 	
 				
 			</div>
 
 		</div>
-		
+		<script src="scripts/auth.js"></script>
 	</body>
 </html>

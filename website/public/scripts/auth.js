@@ -133,3 +133,21 @@ function lerDados(){
         }
       });
 }
+
+function feedBom() {
+  var divbom = document.getElementById("divBom").style;
+  var divmau = document.getElementById("divMau").style;
+
+  divbom.display = "block";
+  divmau.display = "none";
+	
+}
+
+function feedMau() {
+  var divbom = document.getElementById("divBom").style;
+  var divmau = document.getElementById("divMau").style;
+
+  divmau.display = "block";
+  divbom.display = "none";
+	
+}
