@@ -9,8 +9,8 @@ var firebaseConfig = {
   storageBucket: "alldayclinic-15a43.appspot.com",
   messagingSenderId: "1019067873830",
   appId: "1:1019067873830:web:904c8b3567de44f88cc4e7",
-  measurementId: "G-M4PBYG679L"}
-
-  // Initialize Firebase
+  measurementId: "G-M4PBYG679L"
+};
+// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();

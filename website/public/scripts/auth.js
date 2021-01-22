@@ -75,79 +75,23 @@ function logout(){
       });
 }
 
-function lerDados(){
-    var db = firebase.firestore()
+function validacao(){
+  
+  firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    var uid = user.uid;
+    //É direcionado para a Página Inicial
+    document.location.replace("inicial.html")
+    // ...
+  } else {
+    // User is signed out
+    // ...
+    document.location.replace("auth/login.html")
 
-    
-
-    /*
-    //este é o que funciona
-
-    const UsersRef = db.collection("users").doc(firebase.auth().currentUser.uid);
-
-    UsersRef.get().then((doc) => {
-        if (!doc.exists) return;
-        console.log("Document data:", doc.data());
-        // Document data: { title: 'The Great Gatsby' }
-        });
-
-*/
-    /*
-    //este nao sei
-    UsersRef.get()
-    .then((doc) => {
-            var dtaNasc = doc.data().dtaNasc;
-            var nome = doc.data().nome;
-            var uid = firebase.auth().currentUser.uid;
-
-            document.getElementById("dtaNasc").innerText = dtaNasc;   
-            document.getElementById("nome").innerText = nome;
-            document.getElementById("uid").innerText = uid;
-        })
-    .catch(err => {
-        console.log('Error getting documents', err);
-    }); */
-
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-          // User is signed in.
-          var db = firebase.firestore();
-            var docRef = db.collection("users").doc(user.uid);
-            docRef.get().then(function(doc) {
-               if(doc && doc.exists) {
-               const myData = doc.data();
-               const dtaNasc = myData.dtaNasc;
-               const nome = myData.nome;
-               const uid = myData.uid;
-               document.getElementById("dtaNasc").innerText = dtaNasc;
-               document.getElementById("nome").innerText = nome;
-               document.getElementById("uid").innerText = uid;
-      
-          }
-          })
-          .catch(function(error) {
-          console.log("Got an error: ",error);
-          });
-        } else {
-          // No user is signed in.
-        }
-      });
+  }
+  });
 }
 
-function feedBom() {
-  var divbom = document.getElementById("divBom").style;
-  var divmau = document.getElementById("divMau").style;
 
-  divbom.display = "block";
-  divmau.display = "none";
-	
-}
-
-function feedMau() {
-  var divbom = document.getElementById("divBom").style;
-  var divmau = document.getElementById("divMau").style;
-
-  divmau.display = "block";
-  divbom.display = "none";
-	
-}
