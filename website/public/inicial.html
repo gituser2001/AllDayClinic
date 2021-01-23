@@ -158,6 +158,26 @@
 					font-size: 30;
 				}
 
+				#divListaConsultas{
+					width: 60%;
+					height: 100%;
+					text-align: center;
+					float:middle;
+					vertical-align: middle;
+					margin: auto;
+				}
+
+				#divConsulta{
+					background-color: #153939;
+					border-radius: 25px;
+					color: white;
+					padding-top: 1px;
+					padding-bottom: 1px;
+					font-size: 15;
+					margin: 0 auto;
+					margin-bottom: 35px;
+				}
+
 		</style>
 
 		<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
@@ -183,7 +203,7 @@
 	</head>
 
 
-	<body>
+	<body onload="lerConsultas()">
 		
 
 		<div class="cabecalho">
@@ -225,6 +245,7 @@
 
 		<div class="bodymain">
 			<div class="colunaEsq">
+				<br><br>
 				<h2 id="tituloColEsq">Como você está hoje?</h2>
 				<br><br>
 
@@ -272,7 +293,8 @@
 				<h2 id="tituloDir">Próximas Consultas</h2>
 				<br><br><br>
 				
-				<button onclick="lerConsultas()"></button>
+				<div id="divListaConsultas">
+				</div>
  
 	
 				

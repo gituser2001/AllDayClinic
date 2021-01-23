@@ -19,20 +19,39 @@ divbom.display = "none";
 function lerConsultas(){
     var db = firebase.firestore();
 
-    db.collection("Consulta").where("idUser", "==", firebase.auth().currentUser.uid)
+    const list_div = document.querySelector("#divListaConsultas");
+
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in.
+        db.collection("Consulta").where("idUser", "==", firebase.auth().currentUser.uid)
     .get()
     .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             // doc.data() is never undefined for query doc snapshots
-            console.log(doc.id, " => ", doc.data());
+
+            if (querySnapshot.exists){
+
+            list_div.innerHTML += "<div id='divConsulta'> <h2>" + doc.data().tipoConsulta + "</h2> <h2>" + doc.data().Data; + "</div><br><br>"
+
+            console.log(doc.id, " => ", doc.data()
+
+          }
+          else{
+            list_div.innerHTML += "<h1>De momento, não existem consultas marcadas.</h1>"
+          });
         });
     })
     .catch(function(error) {
         console.log("Error getting documents: ", error);
     });
-
-    window.alert("Esta a dar esta funcao");
-    }
+    
+      } else {
+        // No user is signed in.
+        document.location.replace("auth/login.html")
+      }
+    });
+}
 
 function lerPerfil(){
     var db = firebase.firestore()
