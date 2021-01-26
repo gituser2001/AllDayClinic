@@ -87,61 +87,50 @@
 					font-size: 30;
 				}
 
-				#botaobom{
-					width: 30%;
-					height: 50px;
+				#email{
+					width: 70%;
+					height: 40px;
+					background-image: url('imagens/email.png');
+					position: left;
+					padding-left: 50px;
+					background-size: 40px;
+					background-repeat: no-repeat;
 					border: none;
 					outline: none;
-					background-color: #153939;
-					color: white;
-					vertical-align:middle;
-					border-radius: 25px;
-					cursor: pointer;
-					background-repeat: no-repeat; 
-					background-origin: content-box;
-				}
-
-				#botaomau{
-					width: 30%;
-					height: 50px;
-					border: none;
-					outline: none;
-					background-color: #153939;
-					color: white;
-					vertical-align:middle;
-					border-radius: 25px;
-					cursor: pointer;
-					background-repeat: no-repeat; 
-					background-origin: content-box;
-				}
-
-				#botaochat{
-					width: 30%;
-					height: 50px;
-					border: none;
-					outline: none;
-					background-color: #153939;
-					color: white;
-					vertical-align:middle;
-					border-radius: 25px;
-					cursor: pointer;
 					font-size: 20px;
-					
+
+					margin: auto;
+					background-color: #D5E8E8;
+					border-radius: 25px;
 				}
 
-				#textobotao{
+				#pass{
+					width: 70%;
+					height: 40px;
+					background-image: url('imagens/pass.png');
+					position: left;
+					padding-left: 50px;
+					background-size: 40px;
+					background-repeat: no-repeat;
+					border: none;
+					outline: none;
 					font-size: 20px;
-					float: left;
-					padding-left: 60px;
-					height: 50%;	
+
+					margin: auto;
+					background-color: #D5E8E8;
+					border-radius: 25px;
 				}
 
-				#divMau{
-					display:none;
-				}
-
-				#divBom{
-					display:none;
+				#botao{
+					width: 30%;
+					height: 40px;
+					border: none;
+					outline: none;
+					font-size: 20px;
+					background-color: #153939;
+					color: white;
+					border-radius: 25px;
+					cursor: pointer;
 				}
 
 			.colunaDir{
@@ -158,43 +147,7 @@
 					font-size: 30;
 				}
 
-				#divListaConsultas{
-					width: 60%;
-					height: 100%;
-					text-align: center;
-					float:middle;
-					vertical-align: middle;
-					margin: auto;
-				}
-
-				#divConsulta{
-					background-color: #153939;
-					border-radius: 25px;
-					color: white;
-					padding-top: 1px;
-					padding-bottom: 1px;
-					font-size: 15;
-					margin: 0 auto;
-					margin-bottom: 35px;
-				}
-
 		</style>
-
-		<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
-
-			<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-			<script src="/__/firebase/8.2.1/firebase-app.js"></script>
-
-			<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-			<script src="/__/firebase/8.2.1/firebase-analytics.js"></script>
-
-			<!-- Add Firebase products that you want to use -->
-			<script src="/__/firebase/8.2.1/firebase-auth.js"></script>
-			<script src="/__/firebase/8.2.1/firebase-firestore.js"></script>
-
-
-			<!-- Initialize Firebase -->
-			<script src="/__/firebase/init.js"></script>
 
 		<link rel="shortcut icon" type="image/png" href="imagens/logobranco.png"/>
 
@@ -203,7 +156,7 @@
 	</head>
 
 
-	<body onload="lerConsultas()">
+	<body>
 		
 
 		<div class="cabecalho">
@@ -211,12 +164,12 @@
             <div id="barraLinks">
                 <div id="divCalendario">
                     <br>
-                    <a href="" style="color:#D5E8E8; text-decoration: none;">Calendário</a>
+                    <a href="" style="color:#D5E8E8;">Calendário</a>
                 </div>
 
                 <div id="divChat">
                     <br>
-                    <a href="chat.html" style="color:#D5E8E8;text-decoration: none;">Chat</a>
+                    <a href="" style="color:#D5E8E8;">Chat</a>
                 </div>
                 
                 
@@ -228,12 +181,12 @@
 
                 <div id="divPerfil">
                     <br>
-                    <a href="perfil.html" style="color:#D5E8E8;text-decoration: none;">Perfil</a>
+                    <a href="perfil.html" style="color:#D5E8E8;">Perfil</a>
                 </div>
 
                 <div id="divPesquisa">
                     <br>
-                    <a href="" style="color:#D5E8E8;text-decoration: none;">Pesquisa</a>
+                    <a href="" style="color:#D5E8E8;">Pesquisa</a>
                 </div>
 
             </div>
@@ -245,45 +198,23 @@
 
 		<div class="bodymain">
 			<div class="colunaEsq">
-				<br><br>
 				<h2 id="tituloColEsq">Como você está hoje?</h2>
-				<br><br>
-
-				<button id="botaomau" onclick="feedMau()" style="background-image: url(imagens/mal.png)">
-					<a id="textobotao">Mal</a>
-				</button>
 				<br><br><br>
 
-				<button id="botaobom" onclick="feedBom()" style="background-image: url(imagens/normal.png)">
-					<a id="textobotao">Normal</a>
-				</button>
+				<button id="botao" onclick="feedMau()">Mal</button>
 				<br><br><br>
 
-				<button id="botaobom" onclick="feedBom()" style="background-image: url(imagens/bem.png)">
-					<a id="textobotao">Bem</a>
-				</button>
-                <br><br><br><br>
+				<button id="botao" onclick="feedBom()">Normal</button>
+				<br><br><br>
+
+				<button id="botao" onclick="feedBom()">Bem</button>
+                <br><br><br>
                 
                 <div>
-					<div id="divBom">
 
-						<p>Obrigado pelo seu feedback!</p>
+                    
 
-					</div>
-					
-					<div id="divMau">
-						
-						<img src="imagens/doc.png">
-						<br><br>
-
-						<p style="font-size: 20px">Contacte o seu médico</p>
-
-						<button id="botaochat" onclick="location.href ='chat.html'">Ir para o chat</button>
-						
-					</div>
-
-				</div>
-				
+                </div>
 
 			</div>
 
@@ -293,18 +224,13 @@
 				<h2 id="tituloDir">Próximas Consultas</h2>
 				<br><br><br>
 				
-				<div id="divListaConsultas">
-				</div>
- 
+				
+
 	
 				
 			</div>
 
 		</div>
-
-		<script src="scripts/auth.js"></script>
-        <script src="scripts/index.js"></script>
-        <script src="scripts/main.js"></script>
-
+		
 	</body>
 </html>
