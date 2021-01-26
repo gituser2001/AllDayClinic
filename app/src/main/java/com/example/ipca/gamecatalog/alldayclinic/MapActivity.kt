@@ -40,7 +40,7 @@ class MapActivity : Fragment() {
 
         mapa.setOnClickListener{
             // Creates an Intent that will load a map of San Francisco
-            val gmmIntentUri = Uri.parse("geo:41.1285201,-8.6101878")
+            val gmmIntentUri = Uri.parse("geo:41.1285201,-8.6101878?q=centro hostipalar de vila nova de gaia")
             val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
             mapIntent.setPackage("com.google.android.apps.maps")
             startActivity(mapIntent)
