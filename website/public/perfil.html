@@ -18,18 +18,10 @@
                 height:11%;
             }
 
-                        #divCalendario {
+            #divChat {
                             background-color: white;    
-                            text-align: center;
-                            width: 20%;
-                            float:left;
-                            font-size: 20px;
-                        }
-
-                        #divChat {
-                            background-color: white;    
-                            text-align: center;
-                            width: 20%;
+                            text-align: right;
+                            width: 35%;
                             float:left;
                             font-size: 20px;
                         }
@@ -37,24 +29,16 @@
                         #divlogo {
                             background-color: white;    
                             text-align: center;
-                            width: 20%;
+                            width: 30%;
                             float:left; 
                         }
 
                         #divPerfil {
                             background-color: white;    
-                            text-align: center;
-                            width: 20%;
+                            text-align: left;
+                            width: 35%;
                             float:left;
                             font-size: 20px;   
-                        }
-
-                        #divPesquisa {
-                            background-color: white;    
-                            text-align: center;
-                            width: 20%;
-                            float:left;
-                            font-size: 20px;
                         }
 
                     .barraTopo {
@@ -75,7 +59,7 @@
             }
 
                 #divNome{
-                    width: 20%;
+                    width: 40%;
                     height:100%;
                     z-index: 2;
                     position: relative;
@@ -83,16 +67,6 @@
                     text-align: center;
                     color: white;
                      
-                }
-
-                #divE{
-                    width: 20%;
-                    height:100%;
-                    position: relative;
-                    z-index: 2;
-                    float:left;
-                    text-align: center;
-                    color: white;
                 }
 
                 #divLogoBotao{
@@ -118,17 +92,7 @@
                     }
 
                 #divIdade{
-                    width: 20%;
-                    height:100%;
-                    position: relative;
-                    z-index: 2;
-                    float:left;
-                    text-align: center;
-                    color: #187C7D;
-                }
-
-                #divCidade{
-                    width: 20%;
+                    width: 40%;
                     height:100%;
                     position: relative;
                     z-index: 2;
@@ -178,11 +142,6 @@
         <div class="cabecalho">
 
             <div id="barraLinks">
-                <div id="divCalendario">
-                    <br>
-                    <a href="" style="color:#D5E8E8; text-decoration: none;">Calendário</a>
-                </div>
-
                 <div id="divChat">
                     <br>
                     <a href="chat.html" style="color:#D5E8E8; text-decoration: none;">Chat</a>
@@ -198,11 +157,6 @@
                 <div id="divPerfil">
                     <br>
                     <a href="" style="color:#153939; text-decoration: none;">Perfil</a>
-                </div>
-
-                <div id="divPesquisa">
-                    <br>
-                    <a href="" style="color:#D5E8E8; text-decoration: none;">Pesquisa</a>
                 </div>
 
             </div>
@@ -221,10 +175,6 @@
                 <h2>Nome</h2>
                 <h3 id="nome"></h3>
             </div>
-
-            <div id="divE">
-                <button onclick="lerPerfil()"></button>
-            </div>
                 
             
             <div id="divLogoBotao">
@@ -236,15 +186,10 @@
 
             <div id="divIdade">
                 <br>
-                <h2>Idade</h2>
+                <h2>Ano de Nascimento</h2>
                 <h3 id="dtaNasc"></h3>
             </div>
 
-            <div id="divCidade">
-                <br>
-                <h2>Cidade</h2>
-                <h3 id="uid"></h3>
-            </div>
 
             <div id="background"></div>
 

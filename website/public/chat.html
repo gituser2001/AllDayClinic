@@ -123,6 +123,11 @@
 						font-size: 20px;
 						text-overflow: ellipsis;
 					}
+				
+				#divBaixo{
+					background-color: #187C7D;
+					z-index: 2;
+				}
 
 
                 #botaoMais{
@@ -145,6 +150,65 @@
 					font-size: 30;
 				}
 
+				#conversa{
+					height: 88%;
+					width: 100%;
+				}
+
+				#dmEsq{
+					text-align: left;
+					float: left;
+					
+				}
+
+				#dm{
+					color: black;
+					background-color: #187C7D;
+					border-radius: 10px;
+					padding-top: 10px;
+					padding-left: 20px;
+					padding-right: 20px;
+					padding-bottom: 10px;
+					font-size: 20;
+					margin-left: 30;
+					margin-right: 30;
+					margin-bottom: 1px;
+					min-width:10px;
+					max-width: 40%;
+				}
+
+				#dmDir{
+					text-align: right;
+					float: right;
+					background-color: #D5E8E8;
+					width: 100%;
+				}
+
+				#meterdm{
+					width: 88%;
+					height: 54px;
+					border-style: solid;
+					border-color: #187C7D;
+					border-radius: 10px;
+					background-color: #D5E8E8;
+					outline: none;
+					color: #187C7D;
+					padding-left: 10px;
+					font-size: 20px;
+					float: left;
+					margin-left: 15px;
+					}
+
+					#meterdm::placeholder {
+					color: #187C7D;
+				}
+
+				#send{
+					float: left;
+					width: 50px;
+					padding-left: 5px;
+				}
+
 		</style>
 
 		<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
@@ -165,7 +229,7 @@
 
 		<link rel="shortcut icon" type="image/png" href="imagens/logobranco.png"/>
 
-		<title>Página Inicial</title>
+		<title>Chat</title>
 
 	</head>
 
@@ -219,21 +283,33 @@
                 </div>
             </div>
 
-			</div>
-
 			<div class="colunaDir">
 				
-				<br><br><br>
-				
-				
+				<div id="conversa">
 
-	
-				
+					<h1 id="tituloDir"></h1>
+
+					<div id="dmEsq">
+					</div>
+					
+					<div id="dmDir">
+						<p id="dm">Adeus</p>
+					</div>
+
+					<div id="dmDir">
+						<p id="dm">Adeus</p>
+					</div>
+					
+
+				</div>
+
+				<input id="meterdm" placeholder="Escrever mensagem..." type="text">
+				<img src="imagens/send.png" id="send">
 			</div>
 
 		</div>
 		<script src="scripts/auth.js"></script>
         <script src="scripts/index.js"></script>
-        <script src="scripts/main.js"></script>
+        <script src="scripts/chat.js"></script>
 	</body>
 </html>

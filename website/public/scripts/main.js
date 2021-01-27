@@ -77,36 +77,3 @@ function lerPerfil(){
         }
       });
 }
-
-function lerDMS(){
-
-  const list_div = document.querySelector("#divListaChat");
-  var fromId;
-  var html = "";
-
-  firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      // User is signed in.
-      var db = firebase.firestore(); 
-      db.collection("latest_messages").doc(user.uid).collection("latest_message").get()
-      .then(querySnapshot => {
-          querySnapshot.forEach(doc => {
-
-            fromId = doc.data().fromId;
-
-            console.log(doc.id, " => ", doc.data());
-
-            list_div.innerHTML += "<div id='pessoasChat'><p id='pessoaChatTitulo'>" + doc.id + "</p><p id='pessoaChatDM'>" + doc.data().text + "</p></div>";
-          });
-      })
-      .catch(function(error) {
-      console.log("Got an error: ",error);
-      });
-    } else {
-      // No user is signed in.
-      document.location.replace("auth/login.html")
-    }
-  });
-}
-
-//
