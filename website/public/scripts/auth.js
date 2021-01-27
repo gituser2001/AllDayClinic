@@ -33,12 +33,11 @@ function registo(){
     var dataNasc = document.getElementById("meterAno").value;
 
     var db = firebase.firestore()
-    var userid = firebase.auth().currentUser.uid;
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then((user) => {
       // Signed in
-
+      
         db.collection("users").doc(firebase.auth().currentUser.uid).set({
             dtaNasc: dataNasc,
             nome: nomeUser,

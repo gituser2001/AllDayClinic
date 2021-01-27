@@ -30,7 +30,7 @@ function lerConsultas(){
         querySnapshot.forEach(function(doc) {
             // doc.data() is never undefined for query doc snapshots
 
-            list_div.innerHTML += "<div id='divConsulta'> <h2>" + doc.data().tipoConsulta + "</h2> <h2>" + doc.data().Data; + "</div><br><br>"
+            list_div.innerHTML += "<div id='divConsulta'> <h2>" + doc.data().tipoConsulta + "</h2> <h2>Sala: " + doc.data().sala + "</div><br><br>"
 
             console.log(doc.id, " => ", doc.data());
 
@@ -76,4 +76,35 @@ function lerPerfil(){
           document.location.replace("auth/login.html")
         }
       });
+}
+
+function passwordChanged() {
+  var pwd = document.getElementById("pass");
+  var passconf = document.getElementById("meterConfirmPass");
+  
+    if (pwd.value == passconf.value) {
+      document.getElementById('message').style.color = 'black';
+      document.getElementById('message').innerHTML = 'Palavras-passe são iguais!';
+    } else {
+      document.getElementById('message').style.color = 'red';
+      document.getElementById('message').innerHTML = 'Palavras-passe são diferentes!';
+    }
+
+
+  var strength = document.getElementById('strength');
+  var strongRegex = new RegExp("^(?=.{14,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+  var mediumRegex = new RegExp("^(?=.{10,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+  var enoughRegex = new RegExp("(?=.{8,}).*", "g");
+  
+  if (pwd.value.length == 0) {
+    strength.innerHTML = 'Escreva a Palavra-Passe';
+  } else if (false == enoughRegex.test(pwd.value)) {
+    strength.innerHTML = 'Mais caracteres';
+  } else if (strongRegex.test(pwd.value)) {
+    strength.innerHTML = '<span style="color:black">Forte!</span>';
+  } else if (mediumRegex.test(pwd.value)) {
+    strength.innerHTML = '<span style="color:orange">Média!</span>';
+  } else {
+    strength.innerHTML = '<span style="color:red">Fraca!</span>';
+  }
 }

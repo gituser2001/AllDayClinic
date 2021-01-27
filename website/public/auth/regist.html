@@ -140,85 +140,6 @@
 					cursor: pointer;
 				}
 
-
-
-				form .field input{
-					width: 100%;
-					height: 100%;
-					border: 1px solid lightgrey;
-					padding-left: 15px;
-					outline: none;
-					border-radius: 5px;
-					font-size: 17px;
-					transition: all 0.3s;
-					}
-					form .field input:focus{
-					border-color: #27ae60;
-					box-shadow: inset 0 0 3px #2fd072;
-					}
-					form .field .showBtn{
-					position: absolute;
-					right: 10px;
-					top: 50%;
-					transform: translateY(-50%);
-					font-size: 15px;
-					font-weight: 600;
-					cursor: pointer;
-					display: none;
-					user-select: none;
-					}
-					form .indicator{
-					height: 10px;
-					margin: 10px 0;
-					display: flex;
-					align-items: center;
-					justify-content: space-between;
-					display: none;
-					}
-					form .indicator span{
-					position: relative;
-					height: 100%;
-					width: 100%;
-					background: lightgrey;
-					border-radius: 5px;
-					}
-					form .indicator span:nth-child(2){
-					margin: 0 3px;
-					}
-					form .indicator span.active:before{
-					position: absolute;
-					content: '';
-					top: 0;
-					left: 0;
-					height: 100%;
-					width: 100%;
-					border-radius: 5px;
-					}
-					.indicator span.weak:before{
-					background-color: #ff4757;
-					}
-					.indicator span.medium:before{
-					background-color: orange;
-					}
-					.indicator span.strong:before{
-					background-color: #23ad5c;
-					}
-					form .text{
-					font-size: 20px;
-					font-weight: 500;
-					display: none;
-					margin-bottom: -10px;
-					}
-					form .text.weak{
-					color: #ff4757;
-					}
-					form .text.medium{
-					color: orange;
-					}
-					form .text.strong{
-					color: #23ad5c;
-					}
-
 		</style>
 
 		<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
@@ -243,7 +164,7 @@
 	</head>
 
 
-	<body onload="strongpass()">
+	<body>
 		
 		<div class="divEsq">
 
@@ -253,7 +174,6 @@
 
 		<div class="divDir">
 
-            <div>
 				<br><br><br>
                 <h4 id="titulo">Registar</h4><br>
 				<br>
@@ -265,26 +185,19 @@
 				<input type="text" placeholder="Ano de Nascimento" id ="meterAno">
 				<br><br><br>
 
-				<input type="email" placeholder="Email" id="email" onkeyup="trigger()" required>
+				<input type="email" placeholder="Email" id="email" required>
 				<br><br><br>
 
-				<form action="#">
-					<div class="field">
-						<input type="password" placeholder="Palavra-Passe" id="pass" required>
-						<br><br><br>
+				<input name="pass" type="password" placeholder="Palavra-Passe" id="pass" onkeyup="return passwordChanged()" required>
+				<br><br>
+				<span id="strength"></span>
+				
+				<br><br>
 
-					</div>
-					</div>
-					<div class="indicator">
-						<span class="weak"></span>
-						<span class="medium"></span>
-						<span class="strong"></span>
-					</div>
-					<div class="text"></div>
-				</form>
-
-					<input type="password" placeholder="Confirmar Palavra-Passe" id="meterConfirmPass">
-					<br><br><br><br><br>
+				<input type="password" placeholder="Confirmar Palavra-Passe" id="meterConfirmPass">
+				<br><br>
+				<span id='message'></span>
+				<br><br><br>
 				
 
 				<button id="botaoRegisto" onclick="registo()">Criar Conta</button>

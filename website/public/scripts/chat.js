@@ -1,6 +1,17 @@
-const list_div = document.querySelector("#divListaChat");
+class Mensagem {
+  constructor(text, fromId, toId, timeStamp){
+  this.text = text;
+  var fromId = fromId;
+  var toId = toId;
+  var timeStamp = timeStamp;}
+}
 
 var outroid;
+
+
+
+const list_div = document.querySelector("#divListaChat");
+
 var nome;
 
 function lerDMS(){
@@ -9,16 +20,17 @@ function lerDMS(){
       if (user) {
         // User is signed in.
         var db = firebase.firestore(); 
-        db.collection("latest_messages").doc(user.uid).collection("latest_message").get()
+        db.collection("latest_messages").doc(user.uid).collection("latest_message").orderBy("timeStamp", "desc")
+        .get()
         .then(querySnapshot => {
             querySnapshot.forEach(doc => { 
               console.log(doc.id, " => ", doc.data());
 
-              mensagem = doc.data().text;
-
               outroid = doc.id;
 
-              getOutroUser(mensagem);
+              mensagem = doc.data().text;
+
+              getOutroUser(doc.id, mensagem);
               
             });
         })
@@ -32,7 +44,7 @@ function lerDMS(){
     });
   }
 
-function getOutroUser(msg){
+function getOutroUser(outroid, msg){
 
   var db = firebase.firestore();
 
@@ -47,8 +59,6 @@ function getOutroUser(msg){
         nome= doc.data().nome;
 
         list_div.innerHTML += "<div id='pessoasChat' onclick='conversa()'><p id='pessoaChatTitulo'>" + nome + "</p><p id='pessoaChatDM'>" + msg + "</p></div>"
-    
-        document.getElementById("tituloDir").innerText = nome;
       
       return nome;
 
@@ -65,34 +75,32 @@ function getOutroUser(msg){
   
 }
 
-    
 
 function conversa(){
-    console.log("ola");
-
-    const escritaDM = document.querySelector("#conversa");
 
     var db = firebase.firestore();
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
 
-        db.collection("user_messages").doc(user.uid).collection(outroid)
+        db.collection("user_messages").doc(user.uid).collection(outroid).orderBy("timeStamp")
         .get()
         .then(function(querySnapshot) {
             querySnapshot.forEach(function(doc) {
+
+                
                 // doc.data() is never undefined for query doc snapshots
+                const escritaDM = document.querySelector("#conversa");
                 console.log(doc.id, " => ", doc.data());
 
                 dmrecebe = doc.data().fromId;
                 dmenvia = doc.data().toId;
                 mensag = doc.data().text
 
-                if(dmrecebe == user.id){
-                  escritaDM.innerHTML += "<div id='dmEsq'>" + mensag + "</div>";
-                }
-                else if (dmenvia == outroid){
-                  escritaDM.innerHTML += "<div id='dmDir'>" + mensag + "</div>";
-                }
+                
+                escritaDM.innerHTML += "<div id='dmEsq'><p id='dm'>" + mensag + "</p></div>";
+                document.getElementById("tituloDir").innerText = nome;
+                
+                
             });
         })
         .catch(function(error) {
